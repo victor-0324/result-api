@@ -438,12 +438,8 @@
 
                         <div class="movierow--item ">
                            <img class="imagem" src="{{ url_for('static', filename='imagens/25.png')}}" width="210" heigt="250" alt="img"> 
-
                         </div>
-
                     </div>
-
-
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->
@@ -466,10 +462,10 @@
     <!-- Plugin js for this page -->
     <script src="{{ url_for('static', filename='assets/vendors/chart.js/Chart.min.js')}}"></script>
 
-    <script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
-    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendors/progressbar.js/progressbar.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendors/jvectormap/jquery-jvectormap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendors/owl-carousel-2/owl.carousel.min.js')}}"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="{{ url_for('static', filename='assets/js/off-canvas.js')}}"></script>

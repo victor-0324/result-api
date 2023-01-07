@@ -7,12 +7,6 @@ def init_app():
     # Configuração do app
     app.secret_key = "vitorvitoriaeyaramariaauvesdacosta"
 
-    # Database
-    # from .database import DBConnectionHendler
-    # from .database import Base
-
-    # db_connection = DBConnectionHendler()
-    # engine = db_connection.get_engine()
 
     with app.app_context(): 
 
