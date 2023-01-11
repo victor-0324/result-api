@@ -49,7 +49,6 @@ htmlcov/
 .coveage
 .coverage.*
 .cache
-Dados.py
 nosetests.xml
 coverage.xml
 *.cover
