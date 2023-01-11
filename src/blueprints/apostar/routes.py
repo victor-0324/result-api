@@ -15,14 +15,31 @@ def Texto():
         html_content = html.content
         # Parsear o conteúdo HTML buscado, para poder ficar mais estruturado de acordo com as tags HTML
         soup = BeautifulSoup(html_content, 'html.parser')
-
-        # cabecario = soup.select('b')[0 : 5]
-        # bichos = soup.find_all('tbody', id=True)
-        # data = soup.find_all('h3', class_='g')
-
-        tabela = soup.find_all('div', class_="col-sm-12 col-md-6 col-lg-4")  
         novo = soup.find_all('td')
-       
+        # Pegando todo o resultados
+        novo = soup.find_all('td')
+        result = [pt.get_text() for pt in novo]
+
+    # bichos de cabeça de todos os dias
+        cabeca_1horario = result[0:4:]
+        cabeca_2horario = result[40:44:]
+        cabeca_3horario = result[80:84]
+        cabeca_4horario = result[120:124:]
+        cabeca_5horario = result[160:164]
+        cabeca_6horario = result[200:204]
+        cabeca_1horario.append('9:45')
+        cabeca_2horario.append('10:45')
+        cabeca_3horario.append('12:45')
+        cabeca_4horario.append('15:45')
+        cabeca_5horario.append('18:H')
+        cabeca_6horario.append('20:00')
+
+        bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario ]
+
+        todos_bichos = [result[i:i+4]for i in range(0, len(result), 4)]
+
+        novo = result
+
         return novo
 
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
@@ -37,4 +54,6 @@ def mostrar():
 @apostar_app.route("/statistica", methods=["GET", "POST"])
 def statistica(): 
     texto = Texto()  
+    
+    
     return render_template("pages/apostar/statistica.html",texto=texto)
