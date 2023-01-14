@@ -1,5 +1,7 @@
 from flask import Blueprint, request, render_template, url_for, redirect
 import requests  
+import json
+from collections import Counter
 from bs4 import BeautifulSoup  
 from datetime import datetime
 
@@ -38,9 +40,10 @@ def Texto():
 
         todos_bichos = [result[i:i+4]for i in range(0, len(result), 4)]
 
-        novo = result
+        saio_mais = Counter(result)
+        
 
-        return novo
+        return saio_mais
 
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
 
@@ -48,12 +51,14 @@ apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template
 # Tela de apostar
 @apostar_app.route("/", methods=["GET", "POST"])
 def mostrar():   
-    return render_template("pages/apostar/mostrar.html")
+    token = {'Authorization': 'Bearer test_98b1f9349d0e0489037646a93ab194'}
+    url = requests.get("https://api.api-futebol.com.br/v1/campeonatos/1/tabela", headers=token)
+    tabela = url.json()
+
+    return render_template("pages/apostar/mostrar.html", tabela=tabela)
 
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
 def statistica(): 
     texto = Texto()  
-    
-    
     return render_template("pages/apostar/statistica.html",texto=texto)

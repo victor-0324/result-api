@@ -1,12 +1,12 @@
 from flask import Blueprint, request, render_template, url_for, redirect
 import requests  
 import json
+from collections import Counter
 from bs4 import BeautifulSoup  
 
 
-url = ["https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-02",
-"https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-03",
-"https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-04",
+url = [
+    "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-04",
 "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-05",
 "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-06",
 "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-07",
@@ -14,6 +14,8 @@ url = ["https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2
 "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-09",
 "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-10",
 "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-11",
+"https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-12",
+"https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-13",
 ]
 
 for lista in url:
@@ -47,17 +49,25 @@ for lista in url:
         cabeca_5horario.append('18:H')
         cabeca_6horario.append('20:00')
         cabeca_7horario.append('20:00')
-        bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario]
+        bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario,cabeca_7horario]
 
         todos_bichos = [result[i:i+4]for i in range(0, len(result), 4)]
         
-      
+        # saio_mais = Counter(result)
+        # for key, couter in saio_mais.items():
+            # saio_mais.update(couter)
+        # print(saio_mais.items())
+
         for i in bichos_cabeca:
-            if '03' in i: 
+            if '21' in i:  
+                # ver = Counter(i[0:4]) 
                 print(i)
 
-            # if i == '22':
+            # if '22' in i: 
             #     print(i)
+            # if '25' in i: 
+            #     print(i)
+           
                
 
     # Pegando os horarios
