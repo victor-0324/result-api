@@ -1,7 +1,7 @@
 from flask import Blueprint, request, render_template, url_for, redirect
 import requests  
 import csv
-import pandas as pd
+
 from collections import Counter
 from bs4 import BeautifulSoup  
 from datetime import datetime
