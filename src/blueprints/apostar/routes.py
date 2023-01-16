@@ -1,24 +1,26 @@
 from flask import Blueprint, request, render_template, url_for, redirect
 import requests  
-import json
+import csv
+import pandas as pd
 from collections import Counter
 from bs4 import BeautifulSoup  
 from datetime import datetime
 
 def Texto():
 # 1. Pegar conteudo HTML a partir da URL
-    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB" 
+    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-15"
+
+
     html = requests.get(url)  
 
     if html.status_code != 200: 
             print(">> Falha na requisição! <<")
     else:
-        # content passa o conteúdo da página
+    # content passa o conteúdo da página
         html_content = html.content
-        # Parsear o conteúdo HTML buscado, para poder ficar mais estruturado de acordo com as tags HTML
+    # Parsear o conteúdo HTML buscado, para poder ficar mais estruturado de acordo com as tags HTML
         soup = BeautifulSoup(html_content, 'html.parser')
-        novo = soup.find_all('td')
-        # Pegando todo o resultados
+    # Pegando todo o resultados
         novo = soup.find_all('td')
         result = [pt.get_text() for pt in novo]
 
@@ -29,21 +31,23 @@ def Texto():
         cabeca_4horario = result[120:124:]
         cabeca_5horario = result[160:164]
         cabeca_6horario = result[200:204]
+        cabeca_7horario = result[240:244]
         cabeca_1horario.append('9:45')
         cabeca_2horario.append('10:45')
         cabeca_3horario.append('12:45')
         cabeca_4horario.append('15:45')
         cabeca_5horario.append('18:H')
         cabeca_6horario.append('20:00')
-
-        bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario ]
+        cabeca_7horario.append('20:00')
+        bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario, cabeca_7horario ]
 
         todos_bichos = [result[i:i+4]for i in range(0, len(result), 4)]
 
-        saio_mais = Counter(result)
-        
+        return todos_bichos
 
-        return saio_mais
+
+def buscar_bicho(bicho, lista):
+    return [sublist for sublist in lista if bicho in sublist]
 
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
 
@@ -59,6 +63,15 @@ def mostrar():
 
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
-def statistica(): 
-    texto = Texto()  
-    return render_template("pages/apostar/statistica.html",texto=texto)
+def statistica():   
+   
+    if request.method == 'POST':
+        bicho = request.form.get("bicho")
+        encotrados = buscar_bicho(bicho, Texto())
+        # df = pd.read_csv('resultados.csv')
+        # encotrados = df.loc[df['Bicho']== bicho]
+
+        encontrados = list(filter(lambda x: bicho in x, Texto()))
+        ver = len(encontrados)
+        return render_template("pages/apostar/statistica.html",bichos=encotrados, vezes=ver,pesquisa=bicho)
+    return render_template("pages/apostar/statistica.html")

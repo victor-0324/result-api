@@ -15230,7 +15230,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #ffffff !important; }
 
 .text-muted, .preview-list .preview-item .preview-item-content p .content-category {
-  color: #6c7293 !important; }
+  color: #00d25b !important; }
 
 .text-black-50 {
   color: rgba(0, 0, 0, 0.5) !important; }
@@ -15781,7 +15781,7 @@ code {
 
 /* Footer */
 .footer {
-  background: #000000;
+  background:#2c409c;
   padding: 20px 1rem;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -21146,10 +21146,10 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: #094b60;
+  background: linear-gradient(0deg, rgba(44,64,156,0.6628851369649422) 0%, rgba(34,193,195,1) 100%);
   padding: 1.875rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1; }
-
+  
 /*# sourceMappingURL=maps/style.css.map */

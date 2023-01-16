@@ -10,7 +10,8 @@ __pycache__/
 
 # C extensions
 *.so
-Dados,py
+teste.py
+resultados.csv
 
 # Distribution / packaging
 .Python
