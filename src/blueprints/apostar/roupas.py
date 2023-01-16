@@ -1,22 +1,3 @@
-
-victor-0324
-/
-result-api
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-result-api/origem/plantas/apostar/routes.py
-@victor-0324
-victor-0324 Update routes.py
- 1 contributor
-79 lines (59 sloc)  2.77 KB
 from flask import Blueprint, request, render_template, url_for, redirect
 import requests  
 import csv
