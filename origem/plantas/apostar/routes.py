@@ -8,11 +8,9 @@ from datetime import datetime
 
 def Texto():
 # 1. Pegar conteudo HTML a partir da URL
-<<<<<<< HEAD:src/blueprints/apostar/routes.py
+
     url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-16"
-=======
-    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/"
->>>>>>> c63541e0d80585828798128d0b5dad28416fd505:origem/plantas/apostar/routes.py
+
 
 
     html = requests.get(url)  
