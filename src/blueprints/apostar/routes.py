@@ -7,7 +7,7 @@ from datetime import datetime
 
 def Bichos():
 # 1. Pegar conteudo HTML a partir da URL
-    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/"
+    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB"
 
     html = requests.get(url)  
 
