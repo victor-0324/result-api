@@ -12,6 +12,7 @@ __pycache__/
 *.so
 teste.py
 resultados.csv
+futebo.py
 
 # Distribution / packaging
 .Python
