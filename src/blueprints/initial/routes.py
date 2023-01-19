@@ -62,12 +62,13 @@ def Texto():
         novo = soup.find_all('p')
        
         return novo
-        
+
 initial_app = Blueprint("initial_app", __name__, url_prefix="/", template_folder='templates',static_folder='static')
 
 # Tela Iniciarl
 @initial_app.route("/", methods=["GET", "POST"])
 def mostrar():
+          
     hrs_0 = Tabela()
     data = Horario()
     texto = Texto()

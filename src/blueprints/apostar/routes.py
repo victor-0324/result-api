@@ -63,8 +63,7 @@ def CaBeca():
 
         return bichos_cabeca
 
-def buscar_bicho(bicho, lista):
-    return [sublist for sublist in lista if bicho in sublist]
+
 
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
 
@@ -77,14 +76,12 @@ def mostrar():
 def statistica():   
     ver = Bichos()
     cabeca = CaBeca()
-    print(cabeca)
     if request.method == 'POST':
         bicho = request.form.get("bicho")
-        encotrados = buscar_bicho(bicho, ver)
         # df = pd.read_csv('resultados.csv')
         # encotrados = df.loc[df['Bicho']== bicho]
 
         encontrados = list(filter(lambda x: bicho in x, Bichos()))
         ver = len(encontrados)
-        return render_template("pages/apostar/statistica.html",bichos=encotrados, vezes=ver,pesquisa=bicho,cabeca=cabeca)
+        return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=ver,pesquisa=bicho,cabeca=cabeca)
     return render_template("pages/apostar/statistica.html",cabeca=cabeca)
