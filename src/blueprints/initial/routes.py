@@ -66,7 +66,7 @@ def Texto():
 initial_app = Blueprint("initial_app", __name__, url_prefix="/", template_folder='templates',static_folder='static')
 
 
-# Tela Iniciarl
+# Tela Iniciarl do app
 @initial_app.route("/", methods=["GET", "POST"])
 def mostrar():
           
