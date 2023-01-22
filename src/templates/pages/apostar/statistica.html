@@ -145,7 +145,7 @@
                                     <img src="{{url_for('static', filename='assets/images/dashboard/Group126@2x.png')}}"class="gradient-corona-img img-fluid" alt="">
                                   </div>
                                   <div class="col-5 col-sm-7 col-xl-8 p-0">
-                                    <h4 class="mb-1 mb-sm-0">Bem-vindo à nossa página de palpites do dia do jogo do bicho!</h4>
+                                    <h4 class="mb-1 mb-sm-0">Bem-vindo à nossa página de palpites</h4>
                                     <p class="mb-0 font-weight-normal d-none d-sm-block">Fale com nosso cambista e fassa sua a posta com um click >></p>
                                   </div>
                                   <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
@@ -157,12 +157,12 @@
                               </div>
                             </div>
                           </div>
-                      </div>    
+                    </div>    
                     <div class="row">
-                      <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                      <div class="col-md-6 col-xl-6 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body">
-                            <h4 class="card-title">Veja quantas vezes seu bicho saio hoje nos 10º</h4>
+                            <h4 class="card-title">Veja quantas vezes seu bicho saio hoje do 1º ao 10º</h4>
                             <form  method="POST">
                             <div class="add-items d-flex">
                               <input type="text" name="bicho" class="form-control todo-list-input" placeholder="Digite o numero">
@@ -189,7 +189,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-8 grid-margin stretch-card">
+                      <div class="col-md-6 col-xl-6 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body">
                             <div class="d-flex flex-row justify-content-between">
@@ -199,167 +199,170 @@
                             <div class="row">
                               <div class="col-12">
                                 <div class="preview-list">
+                                  {% for bicho in cabeca %} 
+                                  {% if bicho[2] == '09' %}
                                   <div class="preview-item border-bottom">
-                                     {% for bicho in cabeca %} 
-                                    {% if bicho[2] == '10' %} 
-                                    
-                                    <div class="preview-thumbnail">
-                                      <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/coelho.png')}}" alt=""> 
-                                        <!-- <i class="mdi mdi-file-document"></i> -->
+                                      <div class="preview-thumbnail">
+                                        <div class="preview-icon bg-primary">
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/cobra.png')}}" alt=""> 
+                                          <!-- <i class="mdi mdi-file-document"></i> -->
+                                        </div>
                                       </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                      <div class="flex-grow">
-                                        <h6 class="preview-subject">{{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
+                                      <div class="preview-item-content d-sm-flex flex-grow">
+                                        <div class="flex-grow">
+                                          <h6 class="preview-subject">{{bicho[1]}}</h6>
+                                          <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
+                                        </div>
+                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
+                                          <!-- <p class="text-muted">{{bicho[4]}}</p> -->
+                                          <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
+                                        </div>
                                       </div>
-                                      <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                        <!-- <p class="text-muted">{{bicho[4]}}</p> -->
-                                        <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
-                                      </div>
-                                    </div>
-                                    
-                                      {% endif %}
-                                      {% endfor %}  
                                   </div>
-                                  <div class="preview-item border-bottom">
-                                    {% for bicho in cabeca %} 
-                                    {% if bicho[2] == '03' %}
-                                    <div class="preview-thumbnail">
-                                      <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/burro.png')}}" alt=""> 
-                                        <!-- <i class="mdi mdi-file-document"></i> -->
-                                      </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                      <div class="flex-grow">
-                                        <h6 class="preview-subject">{{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
-                                      </div>
-                                      <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                        <!-- <p class="text-muted">{{bicho[4]}}</p> -->
-                                        <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
-                                      </div>
-                                    </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                  </div>
-                                  <div class="preview-item border-bottom">
-                                    {% for bicho in cabeca %} 
-                                    {% if bicho[2] == '07' %}
-                                    <div class="preview-thumbnail">
-                                      <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/carneiro.png')}}" alt=""> 
-                                        <!-- <i class="mdi mdi-file-document"></i> -->
-                                      </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                      <div class="flex-grow">
-                                        <h6 class="preview-subject">{{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
-                                      </div>
-                                      <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                        <!-- <p class="text-muted">{{bicho[4]}}</p> -->
-                                        <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
-                                      </div>
-                                    </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                  </div>
-                                  <div class="preview-item border-bottom">
-                                    {% for bicho in cabeca %} 
-                                    {% if bicho[2] == '02' %}
-                                    <div class="preview-thumbnail">
-                                      <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/aguia.png')}}" alt=""> 
-                                        <!-- <i class="mdi mdi-file-document"></i> -->
-                                      </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                      <div class="flex-grow">
-                                        <h6 class="preview-subject">{{bicho[2]}}</h6>
-                                        <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
-                                      </div>
-                                      <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                        <!-- <p class="text-muted">{{bicho[4]}}</p> -->
-                                        <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
-                                       
-                                      </div>
-                                    </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                  </div>
-                                  <div class="preview-item border-bottom">
-                                    {% for bicho in cabeca %} 
-                                    {% if bicho[2] == '23' %}
-                                    <div class="preview-thumbnail">
-                                      <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/urso.png')}}" alt=""> 
-                                        <!-- <i class="mdi mdi-file-document"></i> -->
-                                      </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                      <div class="flex-grow">
-                                        <h6 class="preview-subject">{{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
-                                      </div>
-                                      <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                        <!-- <p class="text-muted">{{bicho[4]}}</p> -->
-                                        <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
-                                      </div>
-                                    </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                  </div>
-                                  <div class="preview-item border-bottom">
-                                    {% for bicho in cabeca %} 
-                                    {% if bicho[2] == '06' %}
-                                    <div class="preview-thumbnail">
-                                      <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/cabra.png')}}" alt=""> 
-                                        <!-- <i class="mdi mdi-file-document"></i> -->
-                                      </div>
-                                    </div>
-                                    <div class="preview-item-content d-sm-flex flex-grow">
-                                      <div class="flex-grow">
-                                        <h6 class="preview-subject">{{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
-                                      </div>
-                                      <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                                        <!-- <p class="text-muted">{{bicho[4]}}</p> -->
-                                        <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
-                                      </div>
-                                    </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                  </div>
+                                  {% endif %}
+                                  {% endfor %} 
 
+                                  {% for bicho in cabeca %} 
+                                  {% if bicho[2] == '03' %}
+                                  <div class="preview-item border-bottom">
+                                      <div class="preview-thumbnail">
+                                        <div class="preview-icon bg-primary">
+                                      
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/burro.png')}}" alt=""> 
+                                          <!-- <i class="mdi mdi-file-document"></i> -->
+                                        </div>
+                                      </div>
+                                      <div class="preview-item-content d-sm-flex flex-grow">
+                                        <div class="flex-grow">
+                                          <h6 class="preview-subject">{{bicho[1]}}</h6>
+                                          <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
+                                        </div>
+                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
+                                          <!-- <p class="text-muted">{{bicho[4]}}</p> -->
+                                          <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  {% endif %}
+                                  {% endfor %}
+
+                                  {% for bicho in cabeca %} 
+                                  {% if bicho[2] == '07' %}
+                                  <div class="preview-item border-bottom">
+                                      <div class="preview-thumbnail">
+                                          <div class="preview-icon bg-primary">
+                                            <img src="{{url_for('static', filename='imagens/bichos-t/carneiro.png')}}" alt=""> 
+                                            <!-- <i class="mdi mdi-file-document"></i> -->
+                                          </div>
+                                      </div>
+                                      <div class="preview-item-content d-sm-flex flex-grow">
+                                        <div class="flex-grow">
+                                          <h6 class="preview-subject">{{bicho[1]}}</h6>
+                                          <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
+                                        </div>
+                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
+                                          <!-- <p class="text-muted">{{bicho[4]}}</p> -->
+                                          <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  {% endif %}
+                                  {% endfor %}
+
+                                  {% for bicho in cabeca %} 
+                                  {% if bicho[2] == '02' %}
+                                  <div class="preview-item border-bottom">
+                                      <div class="preview-thumbnail">
+                                        <div class="preview-icon bg-primary">
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/aguia.png')}}" alt=""> 
+                                          <!-- <i class="mdi mdi-file-document"></i> -->
+                                        </div>
+                                      </div>
+                                      <div class="preview-item-content d-sm-flex flex-grow">
+                                        <div class="flex-grow">
+                                          <h6 class="preview-subject">{{bicho[2]}}</h6>
+                                          <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
+                                        </div>
+                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
+                                          <!-- <p class="text-muted">{{bicho[4]}}</p> -->
+                                          <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
+                                        
+                                        </div>
+                                      </div>
+                                  </div>
+                                  {% endif %}
+                                  {% endfor %}
+
+                                  {% for bicho in cabeca %} 
+                                  {% if bicho[2] == '23' %}
+                                  <div class="preview-item border-bottom">
+                                      <div class="preview-thumbnail">
+                                        <div class="preview-icon bg-primary">
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/urso.png')}}" alt=""> 
+                                          <!-- <i class="mdi mdi-file-document"></i> -->
+                                        </div>
+                                      </div>
+                                      <div class="preview-item-content d-sm-flex flex-grow">
+                                        <div class="flex-grow">
+                                          <h6 class="preview-subject">{{bicho[1]}}</h6>
+                                          <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
+                                        </div>
+                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
+                                          <!-- <p class="text-muted">{{bicho[4]}}</p> -->
+                                          <p class="text-muted mb-0">Horario {{bicho[4]}} </p>
+                                        </div>
+                                      </div>
+                                  </div>  
+                                  {% endif %}
+                                  {% endfor %}  
+
+                                  {% for bicho in cabeca %} 
+                                  {% if bicho[2] == '06' %}
+                                  <div class="preview-item border-bottom">
+                                      <div class="preview-thumbnail">
+                                        <div class="preview-icon bg-primary">
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/cabra.png')}}" alt=""> 
+                                          <!-- <i class="mdi mdi-file-document"></i> -->
+                                        </div>
+                                      </div>
+                                      <div class="preview-item-content d-sm-flex flex-grow">
+                                        <div class="flex-grow">
+                                          <h6 class="preview-subject">{{bicho[1]}}</h6>
+                                          <p class="text-muted mb-0">Milhar {{bicho[1]}}</p>
+                                        </div>
+                                        <div class="mr-auto text-sm-right pt-2 pt-sm-0">
+                                          <!-- <p class="text-muted">{{bicho[4]}}</p> -->
+                                          <p class="text-muted mb-0">Horario {{bicho[4]}} </p> 
+                                        </div>
+                                      </div>
+                                  </div>
+                                  {% endif %}
+                                  {% endfor %}
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                     </div>  
-                     <h2>
+                    </div>  
+                  <h2>
                       Palpites do dia 
-                     </h2>                                           
+                  </h2>                                           
                     <div class="row">
                       <div class="col-sm-4 grid-margin">
                         <div class="card">
                           <div class="card-body">
-                            <h5>Coelho</h5>
+                            <h5>Cobra</h5>
                             <div class="row">
                               <div class="col-8 col-sm-12 col-xl-8 my-auto">
                                 <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                  <h2 class="mb-0">2440</h2>
+                                  <h2 class="mb-0">1136</h2>
                                   <p class="text-success ml-2 mb-0 font-weight-medium">Milhar</p>
                                 </div>
                                 <!-- <h6 class="text-muted font-weight-normal">45.38% Chances de sair</h6> -->
                               </div>
                               <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                                <img src="{{url_for('static', filename='imagens/bichos-t/coelho.png')}}" height="70" width="70" alt="">
+                                <img src="{{url_for('static', filename='imagens/bichos-t/cobra.png')}}" height="70" width="70" alt="">
                                 <!-- <i class="icon-lg mdi mdi-codepen text-primary ml-auto"></i>  -->
                               </div>
                             </div>
@@ -406,7 +409,7 @@
                           </div>
                         </div>
                       </div>
-                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-sm-4 grid-margin">
                         <div class="card">
@@ -468,172 +471,172 @@
                           </div>
                         </div>
                       </div>
-                      </div>
-                   <div class="row">
-                        <div class="col-lg-6 grid-margin stretch-card">
-                          <div class="card">
-                            <div class="card-body">
-                              <h4 class="card-title">Puxada do jogo do bicho</h4>
-                              <p class="card-description"> 1 - 12</code>
-                              </p>
-                              <div class="table-responsive">
-                                <table class="table table-dark">
-                                  <thead>
-                                    <tr>
-                                      <th> Bichos </th>
-                                      <th> Puxadas </th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td> Avestruz PUXA:</td>
-                                      <td> Vaca – Águia – Galo – Pavão – Peru </td>
+                    </div>
+                    <div class="row">
+                          <div class="col-lg-6 grid-margin stretch-card">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Puxada do jogo do bicho</h4>
+                                <p class="card-description"> 1 - 12</code>
+                                </p>
+                                <div class="table-responsive">
+                                  <table class="table table-dark">
+                                    <thead>
+                                      <tr>
+                                        <th> Bichos </th>
+                                        <th> Puxadas </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td> Avestruz PUXA:</td>
+                                        <td> Vaca – Águia – Galo – Pavão – Peru </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Águia PUXA:  </td>
+                                        <td> Coelho – Avestruz – Galo – Pavão – Peru </td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Águia PUXA:  </td>
-                                      <td> Coelho – Avestruz – Galo – Pavão – Peru </td>
+                                      </tr>
+                                      <tr>
+                                        <td> Burro PUXA: </td>
+                                        <td> Cavalo – Elefante – Touro – Veado – Coelho – Cobra </td>
+                                      
+                                      </tr>
+                                      <tr>
+                                        <td> Borboleta PUXA: </td>
+                                        <td> Cabra – Elefante – Gato – Leão – Cachorro – Galo </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Cachorro PUXA: </td>
+                                        <td> Galo – Gato – Camelo – Macaco – Porco – Pavão </td>
                                     
-                                    </tr>
-                                    <tr>
-                                      <td> Burro PUXA: </td>
-                                      <td> Cavalo – Elefante – Touro – Veado – Coelho – Cobra </td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td> Borboleta PUXA: </td>
-                                      <td> Cabra – Elefante – Gato – Leão – Cachorro – Galo </td>
+                                      </tr>
+                                      <tr>
+                                        <td> Cabra PUXA: </td>
+                                        <td> Carneiro – Macaco – Elefante – Touro – Tigre – Urso</td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Carneiro-PUXA: </td>
+                                        <td> Cabra – Coelho – Vaca </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Camelo PUXA: </td>
+                                        <td> Cachorro – Elefante e Urso </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Cobra PUXA: </td>
+                                        <td> Jacaré –Porco – Burro – Gato </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Coelho PUXA: </td>
+                                        <td> Carneiro – Águia – Burro </td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Cachorro PUXA: </td>
-                                      <td> Galo – Gato – Camelo – Macaco – Porco – Pavão </td>
-                                  
-                                    </tr>
-                                    <tr>
-                                      <td> Cabra PUXA: </td>
-                                      <td> Carneiro – Macaco – Elefante – Touro – Tigre – Urso</td>
+                                      </tr>
+                                      <tr>
+                                        <td> Cavalo PUXA: </td>
+                                        <td>  Burro – Cabra – Touro </td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Carneiro-PUXA: </td>
-                                      <td> Cabra – Coelho – Vaca </td>
+                                      </tr>
+                                      <tr>
+                                        <td> Elefante PUXA: </td>
+                                        <td> Cabra – Urso – Tigre – Leão – Burro </td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Camelo PUXA: </td>
-                                      <td> Cachorro – Elefante e Urso </td>
-                                      
-                                    </tr>
-                                    <tr>
-                                      <td> Cobra PUXA: </td>
-                                      <td> Jacaré –Porco – Burro – Gato </td>
-                                      
-                                    </tr>
-                                    <tr>
-                                      <td> Coelho PUXA: </td>
-                                      <td> Carneiro – Águia – Burro </td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td> Cavalo PUXA: </td>
-                                      <td>  Burro – Cabra – Touro </td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td> Elefante PUXA: </td>
-                                      <td> Cabra – Urso – Tigre – Leão – Burro </td>
-                                    
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-lg-6 grid-margin stretch-card">
-                          <div class="card">
-                            <div class="card-body">
-                              <h4 class="card-title">Puxada do jogo do bicho</h4>
-                              <p class="card-description"> 13 - 25</code>
-                              </p>
-                              <div class="table-responsive">
-                                <table class="table table-dark">
-                                  <thead>
-                                    <tr>
-                                      <th> Galo PUXA: </th>
-                                      <th> Cachorro – Avestruz – Águia – Pavão – Peru </th>
+                          <div class="col-lg-6 grid-margin stretch-card">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Puxada do jogo do bicho</h4>
+                                <p class="card-description"> 13 - 25</code>
+                                </p>
+                                <div class="table-responsive">
+                                  <table class="table table-dark">
+                                    <thead>
+                                      <tr>
+                                        <th> Galo PUXA: </th>
+                                        <th> Cachorro – Avestruz – Águia – Pavão – Peru </th>
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody>
                                       
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    
-                                    <tr>
-                                      <td> Gato PUXA:  </td>
-                                      <td> Cachorro – Leão – Tigre – Cobra </td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td> Jacaré PUXA: </td>
-                                      <td> Cobra – Porco – Borboleta – Macaco</td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td> Leão PUXA:  </td>
-                                      <td>Elefante – Gato – Tigre – Urso </td>
+                                      <tr>
+                                        <td> Gato PUXA:  </td>
+                                        <td> Cachorro – Leão – Tigre – Cobra </td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Macaco PUXA: </td>
-                                      <td> Cachorro – Cabra – Peru – Jacaré  </td>
-                                  
-                                    </tr>
-                                    <tr>
-                                      <td> Porco Puxa: </td>
-                                      <td>  Cobra – Peru – Jacaré – Cachorro</td>
+                                      </tr>
+                                      <tr>
+                                        <td> Jacaré PUXA: </td>
+                                        <td> Cobra – Porco – Borboleta – Macaco</td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Pavão PUXA:  </td>
-                                      <td> Avestruz – Águia – Galo – Peru </td>
+                                      </tr>
+                                      <tr>
+                                        <td> Leão PUXA:  </td>
+                                        <td>Elefante – Gato – Tigre – Urso </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Macaco PUXA: </td>
+                                        <td> Cachorro – Cabra – Peru – Jacaré  </td>
+                                    
+                                      </tr>
+                                      <tr>
+                                        <td> Porco Puxa: </td>
+                                        <td>  Cobra – Peru – Jacaré – Cachorro</td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Pavão PUXA:  </td>
+                                        <td> Avestruz – Águia – Galo – Peru </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td>Peru PUXA:</td>
+                                        <td> Avestruz – Águia – Galo – Pavão – Veado</td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Touro PUXA: </td>
+                                        <td> Vaca – Burro – Cabra </td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td> Tigre PUXA: </td>
+                                        <td> Gato – Leão – Cabra </td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td>Peru PUXA:</td>
-                                      <td> Avestruz – Águia – Galo – Pavão – Veado</td>
+                                      </tr>
+                                      <tr>
+                                        <td> Urso PUXA: </td>
+                                        <td> Leão – Elefante – Camelo – Cabra   </td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Touro PUXA: </td>
-                                      <td> Vaca – Burro – Cabra </td>
+                                      </tr>
+                                      <tr>
+                                        <td>  Veado PUXA:  </td>
+                                        <td> Peru – Burro – Cabra</td>
                                       
-                                    </tr>
-                                    <tr>
-                                      <td> Tigre PUXA: </td>
-                                      <td> Gato – Leão – Cabra </td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td> Urso PUXA: </td>
-                                      <td> Leão – Elefante – Camelo – Cabra   </td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td>  Veado PUXA:  </td>
-                                      <td> Peru – Burro – Cabra</td>
-                                    
-                                    </tr>
-                                    <tr>
-                                      <td>  Vaca PUXA:   </td>
-                                      <td> Touro – Avestruz – Carneiro </td>
-                                    
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                      </tr>
+                                      <tr>
+                                        <td>  Vaca PUXA:   </td>
+                                        <td> Touro – Avestruz – Carneiro </td>
+                                      
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
                     </div>
                   </div>  
               <footer class="footer">

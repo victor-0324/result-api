@@ -28,7 +28,7 @@ def Bichos():
 
 def CaBeca():
 # 1. Pegar conteudo HTML a partir da URL
-    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-20"
+    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-01-22"
 
     html = requests.get(url)  
 
@@ -56,7 +56,7 @@ def CaBeca():
         cabeca_3horario.append('12:45')
         cabeca_4horario.append('15:45')
         cabeca_5horario.append('18:H')
-        cabeca_6horario.append('20:00')
+        cabeca_6horario.append('19:00')
         cabeca_7horario.append('20:00')
 
         bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario, cabeca_7horario ]
@@ -70,6 +70,7 @@ apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template
 # Tela de apostar
 @apostar_app.route("/", methods=["GET", "POST"])
 def mostrar():   
+
     return render_template("pages/apostar/mostrar.html")
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
