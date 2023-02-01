@@ -10,6 +10,7 @@ __pycache__/
 
 # C extensions
 *.so
+teste2.py
 teste.py
 resultados.csv
 futebo.py

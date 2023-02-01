@@ -109,7 +109,6 @@
                         <span class="menu-title">Statisticas</span>
                     </a>
                 </li>
-
             </ul>
         </nav>
         <!-- partial -->
@@ -157,7 +156,123 @@
                               </div>
                             </div>
                           </div>
-                    </div>   
+                    </div>  
+                    
+                    <div class="row">
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">Veja quantas vezes seu bicho saio hoje do 1º ao 10º</h4>
+                              <form  method="POST">
+                              <div class="add-items d-flex">
+                                <input type="text" name="bicho" class="form-control todo-list-input" placeholder="Digite o numero">
+                                <button class="add btn btn-primary">Pesquisar</button>
+                              </div>
+                              </form>
+                              <div class="list-wrapper">
+                                <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
+                                <li> 
+                                
+                                {% for mostrar in bichos %}<br>
+                                {% for ver in mostrar %}
+                                {{ver}}
+                                {% endfor %}
+                                {% endfor %}
+                          
+                                </li>
+                              <li>
+                                <p>{{pesquisa}}  Saio: {{vezes}}</p>
+                                </li>
+                                
+                                </ul>
+                              </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">Todos os bichos</h4>
+                              <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel owl-loaded owl-drag" id="owl-carousel-basic">
+                               
+                                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-594px, 0px, 0px); transition: all 0.25s ease 0s; width: 2082px;"><div class="owl-item cloned" style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/1.png')}}"   alt=""> 
+                                </div></div><div class="owl-item active" style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/2.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/3.png')}}"   alt=""> 
+                                </div></div><div class="owl-item" style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/4.png')}}"   alt=""> 
+                                </div></div><div class="owl-item" style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/5.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/6.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/7.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/8.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/9.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/10.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/11.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/12.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/13.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/14.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/15.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/16.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/17.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/18.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/19.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/20.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/21.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/22.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/23.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/24.png')}}"   alt=""> 
+                                </div></div><div class="owl-item " style="width: 287.317px; margin-right: 10px;"><div class="item">
+                                  <img src="{{url_for('static', filename='imagens/25.png')}}"   alt=""> 
+                                </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="mdi mdi-chevron-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="mdi mdi-chevron-right"></i></button></div><div class="owl-dots disabled"></div></div>
+
+                              <div class="d-flex py-4">
+                                <div class="preview-list w-100">
+                                  <div class="preview-item p-0">
+                                    <div class="preview-thumbnail">
+                                      <img src="assets/images/faces/face12.jpg" class="rounded-circle" alt="">
+                                    </div>
+                                    <div class="preview-item-content d-flex flex-grow">
+                                      <div class="flex-grow">
+                                        <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                          <h6 class="preview-subject">CeeCee Bass</h6>
+                                          <p class="text-muted text-small">4 Hours Ago</p>
+                                        </div>
+                                        <p class="text-muted">Well, it seems to be working now.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="text-muted">Well, it seems to be working now. </p>
+                              <div class="progress progress-md portfolio-progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
                   <h2>
                       Palpites do dia 
                   </h2>                                           
@@ -271,7 +386,7 @@
                             <div class="row">
                               <div class="col-8 col-sm-12 col-xl-8 my-auto">
                                 <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                  <h2 class="mb-0">4422</h2>
+                                  <h2 class="mb-0">2244</h2>
                                   <p class="text-success ml-2 mb-0 font-weight-medium">Milhar</p>
                                 </div>
                                 <!-- <h6 class="text-muted font-weight-normal">11.38% Chances de sair</h6> -->
@@ -286,41 +401,10 @@
                       </div>
                     </div> <br>
                   <h2>
-                    Aria interativa 
+                    Acertos de hoje 
                   </h2>
                     <div class="row">
-                      <div class="col-md-6 col-xl-6 grid-margin stretch-card">
-                        <div class="card">
-                          <div class="card-body">
-                            <h4 class="card-title">Veja quantas vezes seu bicho saio hoje do 1º ao 10º</h4>
-                            <form  method="POST">
-                            <div class="add-items d-flex">
-                              <input type="text" name="bicho" class="form-control todo-list-input" placeholder="Digite o numero">
-                              <button class="add btn btn-primary">Pesquisar</button>
-                            </div>
-                            </form>
-                            <div class="list-wrapper">
-                              <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
-                              <li> 
-                              
-                              {% for mostrar in bichos %}<br>
-                              {% for ver in mostrar %}
-                              {{ver}}
-                              {% endfor %}
-                              {% endfor %}
-                         
-                              </li>
-                             <li>
-                               <p>{{pesquisa}}  Saio: {{vezes}}</p>
-                              </li>
-                               
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                
-                      <div class="col-md-6 col-xl-6 grid-margin stretch-card">
+                      <div class="col-md-12 col-xl-6 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body">
                             <div class="d-flex flex-row justify-content-between">
@@ -331,11 +415,11 @@
                               <div class="col-12">
                                 <div class="preview-list">
                                   {% for bicho in cabeca %} 
-                                  {% if bicho[2] == '09' %}
+                                  {% if bicho[2] == '19' %}
                                   <div class="preview-item border-bottom">
                                       <div class="preview-thumbnail">
                                         <div class="preview-icon bg-primary">
-                                          <img src="{{url_for('static', filename='imagens/bichos-t/cobra.png')}}" alt=""> 
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/pavao.png')}}" alt=""> 
                                           <!-- <i class="mdi mdi-file-document"></i> -->
                                         </div>
                                       </div>
@@ -354,12 +438,12 @@
                                   {% endfor %} 
 
                                   {% for bicho in cabeca %} 
-                                  {% if bicho[2] == '03' %}
+                                  {% if bicho[2] == '20' %}
                                   <div class="preview-item border-bottom">
                                       <div class="preview-thumbnail">
                                         <div class="preview-icon bg-primary">
                                       
-                                          <img src="{{url_for('static', filename='imagens/bichos-t/burro.png')}}" alt=""> 
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/peru.png')}}" alt=""> 
                                           <!-- <i class="mdi mdi-file-document"></i> -->
                                         </div>
                                       </div>
@@ -401,11 +485,11 @@
                                   {% endfor %}
 
                                   {% for bicho in cabeca %} 
-                                  {% if bicho[2] == '02' %}
+                                  {% if bicho[2] == '11' %}
                                   <div class="preview-item border-bottom">
                                       <div class="preview-thumbnail">
                                         <div class="preview-icon bg-primary">
-                                          <img src="{{url_for('static', filename='imagens/bichos-t/aguia.png')}}" alt=""> 
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/cavalo.png')}}" alt=""> 
                                           <!-- <i class="mdi mdi-file-document"></i> -->
                                         </div>
                                       </div>
@@ -425,11 +509,11 @@
                                   {% endfor %}
 
                                   {% for bicho in cabeca %} 
-                                  {% if bicho[2] == '23' %}
+                                  {% if bicho[2] == '18' %}
                                   <div class="preview-item border-bottom">
                                       <div class="preview-thumbnail">
                                         <div class="preview-icon bg-primary">
-                                          <img src="{{url_for('static', filename='imagens/bichos-t/urso.png')}}" alt=""> 
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/porco.png')}}" alt=""> 
                                           <!-- <i class="mdi mdi-file-document"></i> -->
                                         </div>
                                       </div>
@@ -448,11 +532,11 @@
                                   {% endfor %}  
 
                                   {% for bicho in cabeca %} 
-                                  {% if bicho[2] == '06' %}
+                                  {% if bicho[2] == '05' %}
                                   <div class="preview-item border-bottom">
                                       <div class="preview-thumbnail">
                                         <div class="preview-icon bg-primary">
-                                          <img src="{{url_for('static', filename='imagens/bichos-t/cabra.png')}}" alt=""> 
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/cachorro.png')}}" alt=""> 
                                           <!-- <i class="mdi mdi-file-document"></i> -->
                                         </div>
                                       </div>
@@ -474,8 +558,9 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                        </div>
                     </div> <br>
+                  <h2> Puxada</h2>
                     <div class="row">
                           <div class="col-lg-6 grid-margin stretch-card">
                             <div class="card">
