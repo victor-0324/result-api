@@ -28,7 +28,7 @@ def Bichos():
 
 def CaBeca():
 # 1. Pegar conteudo HTML a partir da URL
-    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-02-11"
+    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB/do-dia/2023-02-10"
 
     html = requests.get(url)  
 
