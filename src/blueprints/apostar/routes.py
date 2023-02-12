@@ -32,9 +32,10 @@ def CaBeca():
 
     html = requests.get(url)  
 
+
     if html.status_code != 200: 
             print(">> Falha na requisição! <<")
-    else:
+    else:   
     # content passa o conteúdo da página
         html_content = html.content
     # Parsear o conteúdo HTML buscado, para poder ficar mais estruturado de acordo com as tags HTML
