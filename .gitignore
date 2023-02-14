@@ -15,6 +15,8 @@ teste.py
 resultados.csv
 futebo.py
 bichos.csv
+previsao.py
+
 # Distribution / packaging
 .Python
 build/
