@@ -79,9 +79,6 @@ def statistica():
     cabeca = CaBeca()
     if request.method == 'POST':
         bicho = request.form.get("bicho")
-        # df = pd.read_csv('resultados.csv')
-        # encotrados = df.loc[df['Bicho']== bicho]
-
         encontrados = list(filter(lambda x: bicho in x, Bichos()))
         ver = len(encontrados)
         return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=ver,pesquisa=bicho,cabeca=cabeca)
