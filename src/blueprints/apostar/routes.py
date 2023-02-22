@@ -5,6 +5,7 @@ from collections import Counter
 from bs4 import BeautifulSoup  
 from datetime import datetime
 
+
 def Bichos():
 # 1. Pegar conteudo HTML a partir da URL
     url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB"
@@ -22,29 +23,7 @@ def Bichos():
         novo = soup.find_all('td')
         result = [pt.get_text() for pt in novo]
 
-        todos_bichos = [result[i:i+4]for i in range(0, len(result), 4)]
-
-        return todos_bichos
-
-def CaBeca():
-# 1. Pegar conteudo HTML a partir da URL
-    url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB"
-
-    html = requests.get(url)  
-
-
-    if html.status_code != 200: 
-            print(">> Falha na requisição! <<")
-    else:   
-    # content passa o conteúdo da página
-        html_content = html.content
-    # Parsear o conteúdo HTML buscado, para poder ficar mais estruturado de acordo com as tags HTML
-        soup = BeautifulSoup(html_content, 'html.parser')
-    # Pegando todo o resultados
-        novo = soup.find_all('td')
-        result = [pt.get_text() for pt in novo]
-
-    # bichos de cabeça de todos os dias
+        # bichos de cabeça de todos os dias
         cabeca_1horario = result[0:4:]
         cabeca_2horario = result[40:44:]
         cabeca_3horario = result[80:84]
@@ -62,7 +41,10 @@ def CaBeca():
 
         bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario, cabeca_7horario ]
 
-        return bichos_cabeca
+        todos_bichos = [result[i:i+4]for i in range(0, len(result), 4)]
+
+        return todos_bichos, bichos_cabeca
+
 
 
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
@@ -75,11 +57,10 @@ def mostrar():
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
 def statistica():   
-    ver = Bichos()
-    cabeca = CaBeca()
+    ver, cabeca = Bichos()
     if request.method == 'POST':
         bicho = request.form.get("bicho")
-        encontrados = list(filter(lambda x: bicho in x, Bichos()))
-        ver = len(encontrados)
-        return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=ver,pesquisa=bicho,cabeca=cabeca)
+        encontrados = list(filter(lambda x: bicho in x, ver))
+        vezes = len(encontrados)
+        return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca)
     return render_template("pages/apostar/statistica.html",cabeca=cabeca)
