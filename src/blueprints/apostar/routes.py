@@ -5,7 +5,6 @@ from collections import Counter
 from bs4 import BeautifulSoup  
 from datetime import datetime
 
-
 def Bichos():
 # 1. Pegar conteudo HTML a partir da URL
     url = "https://www.resultadofacil.com.br/resultado-do-jogo-do-bicho/PB"
@@ -31,7 +30,7 @@ def Bichos():
         cabeca_5horario = result[160:164]
         cabeca_6horario = result[200:204]
         cabeca_7horario = result[240:244]
-        cabeca_1horario.append('9:45')
+        cabeca_1horario.append('09:45')
         cabeca_2horario.append('10:45')
         cabeca_3horario.append('12:45')
         cabeca_4horario.append('15:45')
