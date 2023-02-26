@@ -112,4 +112,4 @@ def statistica():
                 encontrados = []
                 vezes = 0
             return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar)
-    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,valor=valor,resultado=resultado,pesquisa_m=pesquisa_m)
+    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes)
