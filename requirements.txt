@@ -2,6 +2,7 @@ beautifulsoup4==4.11.2
 Flask==2.2.2
 matplotlib
 numpy
+gunicorn
 Flask==2.2.2
 beautifulsoup4==4.11.2
 pandas==1.5.2
