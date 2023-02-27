@@ -65,19 +65,19 @@ def statistica():
                     '1': 'Milhar', 
                     '2': 'Grupo', 
                     '3': 'Bichos'}, inplace=True)
-
-    
-
-# Top 10 menos que sairam
+    # Top 10 mais e menos que sairam
     df_posicao_1 = df[df['Posicao'] == '1º']
     agrupado = df_posicao_1.groupby(['Bichos']).size().reset_index(name='counts')
     agrupado_mas = agrupado.sort_values(by='counts', ascending=False)
     agrupado = agrupado.sort_values(by='counts', ascending=True)
     menos_frequentes = agrupado.head(10).to_dict(orient='records')
     bichos_mais_frequentes  = agrupado_mas.head(10).to_dict(orient='records')
-    
+    #  Top 10 milhar
+    top = df.groupby(['Milhar']).size().reset_index(name='counts')
+    milhares = top.sort_values(by='counts', ascending=False)
+    top_m = milhares.iloc[1:].head(12).to_dict(orient='records')
+    print(top_m)
     if request.method == 'POST':
-        
         # Pesquisa milhar 
         milhar = request.form.get("milhar")
         bicho = request.form.get("bicho")
@@ -100,9 +100,8 @@ def statistica():
             resultado = df.loc[df['Milhar'] == milhar_int].to_dict('records')
             valor = len(resultado)
             pesquisa_m = milhar
-            return render_template("pages/apostar/statistica.html", pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,valor=valor,resultado=resultado)
+            return render_template("pages/apostar/statistica.html", pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,valor=valor,resultado=resultado,top_m=top_m)
         elif 'bicho' in request.form:
-            print(type(bicho))
             if bicho is not None:
                 encontrados = list(filter(lambda x: bicho in x, ver))
 
@@ -111,4 +110,4 @@ def statistica():
                 encontrados = []
                 vezes = 0
             return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar)
-    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes)
+    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,top_m=top_m)
