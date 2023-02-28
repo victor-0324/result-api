@@ -341,7 +341,7 @@
                         </div> 
                        </div> <br>
                   <h2>
-                      Bixos da sorte
+                      Palpites do dia 
                   </h2>                                           
                     <div class="row">
                       <div class="col-sm-4 grid-margin">
@@ -623,7 +623,7 @@
                         </div>
                       </div>
                     </div>
-                    <h3>Estas tabelas mostram os 10 números mais sorteados e os 10 menos sorteados des do dia 02/01/2023. e as Top 12 Milhar que mas saiu do primeiro ao decimo</h3>
+                    <h2>Dados coletados a partir do dia 02/01/2023</h2><br>
                     <div class="row">
                       <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                         <div class="card">
@@ -708,9 +708,94 @@
                         </div>
                       </div>
                    </div>
-                  <h2> Puxada</h2>
+                  <h2> Aria dos ternos </h2>
                     <div class="row">
-                          <div class="col-lg-6 grid-margin stretch-card">
+                      <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="d-flex flex-row justify-content-between">
+                              <h4 class="card-title"></h4> <br>
+                              <p class="text-muted mb-1 small"></p>
+                            </div>
+                            <div class="preview-list">
+                              {% for bicho in bichos_mais_frequentes %}
+                              <div class="preview-item border-bottom">
+                                  <div class="preview-thumbnail">
+                                    <!-- <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle"> -->
+                                  </div>
+                                  <div class="preview-item-content d-flex flex-grow">
+                                      <div class="flex-grow">
+                                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                              <h6 class="preview-subject">Em breve novidades</h6>
+                                              <h6  class="text-muted text-small">Em breve novidades vezes</h6>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                          
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="d-flex flex-row justify-content-between">
+                              <h4 class="card-title"></h4> <br>
+                              <p class="text-muted mb-1 small"></p>
+                            </div>
+                            <div class="preview-list">
+                              {% for bicho in bichos_mais_frequentes %}
+                              <div class="preview-item border-bottom">
+                                  <div class="preview-thumbnail">
+                                    <!-- <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle"> -->
+                                  </div>
+                                  <div class="preview-item-content d-flex flex-grow">
+                                      <div class="flex-grow">
+                                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                              <h6 class="preview-subject">Em breve novidades</h6>
+                                              <h6  class="text-muted text-small">Em breve novidades vezes</h6>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                          
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="d-flex flex-row justify-content-between">
+                              <h4 class="card-title"></h4> <br>
+                              <p class="text-muted mb-1 small"></p>
+                            </div>
+                            <div class="preview-list">
+                              {% for bicho in bichos_mais_frequentes %}
+                              <div class="preview-item border-bottom">
+                                  <div class="preview-thumbnail">
+                                    <!-- <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle"> -->
+                                  </div>
+                                  <div class="preview-item-content d-flex flex-grow">
+                                      <div class="flex-grow">
+                                          <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                              <h6 class="preview-subject">Em breve novidades</h6>
+                                              <h6  class="text-muted text-small">Em breve novidades vezes</h6>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                          
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                          <!-- <div class="col-lg-6 grid-margin stretch-card">
+
                             <div class="card">
                               <div class="card-body">
                                 <h4 class="card-title">Puxada do jogo do bicho</h4>
@@ -873,7 +958,7 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div> -->
                     </div>
                   </div>  
               <footer class="footer">
