@@ -68,13 +68,13 @@ def statistica():
     agrupado = df_posicao_1.groupby(['Bichos']).size().reset_index(name='counts')
     agrupado_mas = agrupado.sort_values(by='counts', ascending=False)
     agrupado = agrupado.sort_values(by='counts', ascending=True)
-    menos_frequentes = agrupado.head(11).to_dict(orient='records')
-    bichos_mais_frequentes  = agrupado_mas.head(11).to_dict(orient='records')
+    menos_frequentes = agrupado.head(12).to_dict(orient='records')
+    bichos_mais_frequentes  = agrupado_mas.head(13).to_dict(orient='records')
 
 #  Top 10 milhar
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
-    top_m = milhares.iloc[1:].head(13).to_dict(orient='records')
+    top_m = milhares.iloc[1:].head(16).to_dict(orient='records')
     
 #   Quantas vezes cada Bicho saio do 1º ao 10º
     busca_nos_10 = df[df['Posicao'] >= '1º']
