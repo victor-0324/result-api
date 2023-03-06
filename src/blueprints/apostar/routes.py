@@ -82,7 +82,7 @@ def statistica():
     menos_decimos = todos.sort_values(by='counts', ascending=True)
     nos_decimos = todos.sort_values(by='counts', ascending=False)
     nos_decimos = nos_decimos.head(12).to_dict(orient='records')
-    menos_decimo = menos_decimos.head(13).to_dict(orient='records')
+    menos_decimo = menos_decimos.head(12).to_dict(orient='records')
     if request.method == 'POST':
         # Pesquisa milhar 
         milhar = request.form.get("milhar")
