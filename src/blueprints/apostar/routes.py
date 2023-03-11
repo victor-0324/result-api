@@ -35,7 +35,7 @@ def Bichos():
         cabeca_3horario.append('12:45')
         cabeca_4horario.append('15:45')
         cabeca_5horario.append('18:H')
-        cabeca_6horario.append('19:00')
+        cabeca_6horario.append('20:00')
         cabeca_7horario.append('20:00')
 
         bichos_cabeca = [cabeca_1horario,cabeca_2horario ,cabeca_3horario ,cabeca_4horario ,cabeca_5horario ,cabeca_6horario, cabeca_7horario ]
