@@ -44,7 +44,23 @@ def Bichos():
 
         return todos_bichos, bichos_cabeca
 
+def Atrasados():
+    url = "http://lotep.net/bicho-atrasado/"
 
+    html = requests.get(url)  
+
+    if html.status_code != 200: 
+            print(">> Falha na requisição! <<")
+    else:
+    # content passa o conteúdo da página
+        html_content = html.content
+    # Parsear o conteúdo HTML buscado, para poder ficar mais estruturado de acordo com as tags HTML
+        soup = BeautifulSoup(html_content, 'html.parser')
+    # Pegando todo o resultados
+        novo = soup.find_all('td')
+        result = [pt.get_text() for pt in novo]
+
+    return result
 
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
 
@@ -54,7 +70,9 @@ def mostrar():
     return render_template("pages/apostar/mostrar.html")
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
-def statistica():   
+def statistica():  
+    atrasado = Atrasados() 
+    print(atrasado)
     ver, cabeca = Bichos()
     df = pd.read_csv("bichos.csv")
     df = df.drop(columns=['Unnamed: 0'])
@@ -115,5 +133,5 @@ def statistica():
             else:
                 encontrados = []
                 vezes = 0
-            return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo)
-    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo)
+            return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado)
+    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado)
