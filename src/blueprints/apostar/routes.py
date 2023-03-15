@@ -51,6 +51,7 @@ def Atrasados():
 
     if html.status_code != 200: 
             print(">> Falha na requisição! <<")
+            return []
     else:
     # content passa o conteúdo da página
         html_content = html.content
@@ -59,8 +60,18 @@ def Atrasados():
     # Pegando todo o resultados
         novo = soup.find_all('td')
         result = [pt.get_text() for pt in novo]
+         # Criar lista de dicionários com as informações da tabela
+        tabela = []
+        for i in range(0, len(result), 3):
+            linha = {
+                "bicho": result[i],
+                "milhar": result[i+1],
+                "data": result[i+2]
+            }
+            tabela.append(linha)
 
-    return result
+        return tabela
+        
 
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
 
