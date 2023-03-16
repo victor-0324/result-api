@@ -83,7 +83,6 @@ def mostrar():
 @apostar_app.route("/statistica", methods=["GET", "POST"])
 def statistica():  
     atrasado = Atrasados() 
-    print(atrasado)
     ver, cabeca = Bichos()
     df = pd.read_csv("bichos.csv")
     df = df.drop(columns=['Unnamed: 0'])
@@ -135,7 +134,7 @@ def statistica():
             resultado = df.loc[df['Milhar'] == milhar_int].to_dict('records')
             valor = len(resultado)
             pesquisa_m = milhar
-            return render_template("pages/apostar/statistica.html", pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,valor=valor,resultado=resultado,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo)
+            return render_template("pages/apostar/statistica.html", pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,valor=valor,resultado=resultado,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado)
         elif 'bicho' in request.form:
             if bicho is not None:
                 encontrados = list(filter(lambda x: bicho in x, ver))

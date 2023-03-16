@@ -16631,7 +16631,7 @@ code {
       right: 0;
       height: 100%; }
   .card.corona-gradient-card {
-    background-image: linear-gradient(to left, #d41459, #911a6c);
+    /* background-image: linear-gradient(to left, #d41459, #911a6c); */
     border-radius: 6px; }
     .card.corona-gradient-card .gradient-corona-img {
       height: 85px; }
@@ -20932,15 +20932,15 @@ div.tagsinput {
       background: #0f1015;
       color: #ffffff; }
     .sidebar .nav .menu-items:nth-child(5n+1) .nav-link .menu-icon i {
-      color: #0090e7; }
+      color: #3AF0A0; }
     .sidebar .nav .menu-items:nth-child(5n+2) .nav-link .menu-icon i {
-      color: #00d25b; }
+      color: #3AF0A0; }
     .sidebar .nav .menu-items:nth-child(5n+3) .nav-link .menu-icon i {
-      color: #8f5fe8; }
+      color: #3AF0A0; }
     .sidebar .nav .menu-items:nth-child(5n+4) .nav-link .menu-icon i {
-      color: #ffab00; }
+      color: #3AF0A0; }
     .sidebar .nav .menu-items:nth-child(5n+5) .nav-link .menu-icon i {
-      color: #fc424a; }
+      color: #3AF0A0; }
 
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
