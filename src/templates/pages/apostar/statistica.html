@@ -167,7 +167,7 @@
                       <div class="col-md-4 col-xl-4 grid-margin stretch-card">
                         <div class="card">
                           <div class="card-body">
-                            <h4 class="card-title">Veja quantas vezes seu bicho saio hoje do 1º ao 10º</h4>
+                            <h4 class="card-title">Veja quantas vezes seu bicho saiu hoje do 1º ao 10º</h4>
                             <form  method="POST">
                             <div class="add-items d-flex">
                               <input type="text" name="bicho" class="form-control todo-list-input" placeholder="Pesquise o bicho">
@@ -176,7 +176,7 @@
                             </form>
                             <div class="list-wrapper">
                               <li>
-                                <p>O bicho ({{pesquisa}}) Saio: {{vezes}}</p>
+                                <p>O bicho ({{pesquisa}}) Saiu: {{vezes}}</p>
                             </li>
                           <ul>
                               <li>
@@ -352,17 +352,17 @@
                     <div class="col-sm-4 grid-margin">
                       <div class="card">
                         <div class="card-body">
-                          <h5>Gato</h5>
+                          <h5>Galo</h5>
                           <div class="row">
                             <div class="col-8 col-sm-12 col-xl-8 my-auto">
                               <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">0455</h2>
+                                <h2 class="mb-0">4049</h2>
                                 <p class="text-success ml-2 mb-0 font-weight-medium">Milhar</p>
                               </div>
                               <!-- <h6 class="text-muted font-weight-normal">45.38% Chances de sair</h6> -->
                             </div>
                             <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                              <img src="{{url_for('static', filename='imagens/bichos-t/gato.png')}}" height="70" width="70" alt="">
+                              <img src="{{url_for('static', filename='imagens/bichos-t/galo.png')}}" height="70" width="70" alt="">
                             </div>
                           </div>
                         </div>
@@ -413,17 +413,17 @@
                     <div class="col-sm-4 grid-margin">
                       <div class="card">
                         <div class="card-body">
-                          <h5>Avestruz</h5>
+                          <h5>Àguia</h5>
                           <div class="row">
                             <div class="col-8 col-sm-12 col-xl-8 my-auto">
                               <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">0303</h2>
+                                <h2 class="mb-0">7908</h2>
                                 <p class="text-success ml-2 mb-0 font-weight-medium">Milhar</p>
                               </div>
                               <!-- <h6 class="text-muted font-weight-normal">.38% Chances de sair</h6> -->
                             </div>
                             <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                              <img src="{{url_for('static', filename='imagens/bichos-t/avestruz.png')}}" height="70" width="70" alt="">
+                              <img src="{{url_for('static', filename='imagens/bichos-t/águia.png')}}" height="70" width="70" alt="">
                               <!-- <i class="icon-lg mdi mdi-codepen text-primary ml-auto"></i>  -->
                             </div>
                           </div>
@@ -433,17 +433,17 @@
                     <div class="col-sm-4 grid-margin">
                       <div class="card">
                         <div class="card-body">
-                          <h5>Borboleta</h5>
+                          <h5>Macaco</h5>
                           <div class="row">
                             <div class="col-8 col-sm-12 col-xl-8 my-auto">
                               <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">1316</h2>
+                                <h2 class="mb-0">5668</h2>
                                 <p class="text-success ml-2 mb-0 font-weight-medium">Milhar</p>
                               </div>
                               <!-- <h6 class="text-muted font-weight-normal">11.38% Chances de sair</h6> -->
                             </div>
                             <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                              <img src="{{url_for('static', filename='imagens/bichos-t/borboleta.png')}}" height="70" width="70" alt="">
+                              <img src="{{url_for('static', filename='imagens/bichos-t/macaco.png')}}" height="70" width="70" alt="">
                               <!-- <i class="icon-lg mdi mdi-codepen text-primary ml-auto"></i>  -->
                             </div>
                           </div>
@@ -483,18 +483,18 @@
                             <div class="col-12">
                               <div class="preview-list">
                                 {% for bicho in cabeca %} 
-                                {% if bicho[2] == '14' %}
+                                {% if bicho[2] == '13' %}
                                 <div class="preview-item border-bottom">
                                     <div class="preview-thumbnail">
                                       <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/gato.png')}}" alt=""> 
+                                        <img src="{{url_for('static', filename='imagens/bichos-t/galo.png')}}" alt=""> 
                                         <!-- <i class="mdi mdi-file-document"></i> -->
                                       </div>
                                     </div>
                                     <div class="preview-item-content d-sm-flex flex-grow">
                                       <div class="flex-grow">
                                         <h6 class="preview-subject">Saiu: {{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Palpite: 0455</p>
+                                        <p class="text-muted mb-0">Palpite: 4049</p>
                                       </div>
                                       <div class="mr-auto text-sm-right pt-2 pt-sm-0">
                                         
@@ -553,18 +553,18 @@
                                 {% endfor %}
 
                                 {% for bicho in cabeca %} 
-                                {% if bicho[2] == '01' %}
+                                {% if bicho[2] == '02' %}
                                 <div class="preview-item border-bottom">
                                     <div class="preview-thumbnail">
                                       <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/avestruz.png')}}" alt=""> 
+                                        <img src="{{url_for('static', filename='imagens/bichos-t/águia.png')}}" alt=""> 
                                         <!-- <i class="mdi mdi-file-document"></i> -->
                                       </div>
                                     </div>
                                     <div class="preview-item-content d-sm-flex flex-grow">
                                       <div class="flex-grow">
                                         <h6 class="preview-subject">Saiu: {{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Palpite: 0303</p>
+                                        <p class="text-muted mb-0">Palpite: 7908</p>
                                       </div>
                                       <div class="mr-auto text-sm-right pt-2 pt-sm-0">
                                         <!-- <p class="text-muted">{{bicho[4]}}</p> -->
@@ -577,18 +577,18 @@
                                 {% endfor %}
 
                                 {% for bicho in cabeca %} 
-                                {% if bicho[2] == '04' %}
+                                {% if bicho[2] == '17' %}
                                 <div class="preview-item border-bottom">
                                     <div class="preview-thumbnail">
                                       <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/borboleta.png')}}" alt=""> 
+                                        <img src="{{url_for('static', filename='imagens/bichos-t/macaco.png')}}" alt=""> 
                                         <!-- <i class="mdi mdi-file-document"></i> -->
                                       </div>
                                     </div>
                                     <div class="preview-item-content d-sm-flex flex-grow">
                                       <div class="flex-grow">
                                         <h6 class="preview-subject">Saiu: {{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Palpite: 1316</p>
+                                        <p class="text-muted mb-0">Palpite: 5668</p>
                                       </div>
                                       <div class="mr-auto text-sm-right pt-2 pt-sm-0">
                                         <!-- <p class="text-muted">{{bicho[4]}}</p> -->
@@ -634,7 +634,7 @@
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex flex-row justify-content-between">
-                            <h5 class="card-title">Os 13 bichos que mas<br>saiu na 1º posição</h5> <br>
+                            <h5 class="card-title">Os 13 bichos que mais<br>saiu na 1º posição</h5> <br>
                             <p class="text-muted mb-1 small">Ate ontem</p>
                           </div>
                           <div class="preview-list">
@@ -721,7 +721,7 @@
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex flex-row justify-content-between">
-                            <h4 class="card-title">Os que mas saiu<br>do 1º ao 10º </h4><br>
+                            <h4 class="card-title">Os que mais saiu<br>do 1º ao 10º </h4><br>
                             <p class="text-muted mb-1 small">Até ontem</p>
                           </div>
                           <div class="preview-list">
@@ -777,7 +777,7 @@
                     <div class="card">
                       <div class="card-body">
                         <h4 class="card-title"> Resultados-PB</h4>
-                        <p class="card-description"> VEJA OS BICHOS <code>MAS ATRASADO</code>
+                        <p class="card-description"> VEJA OS BICHOS <code>MAIS ATRASADOS</code>
                         </p>
                         
                           <div class="table-responsive">
