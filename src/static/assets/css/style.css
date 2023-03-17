@@ -8606,7 +8606,7 @@ pre {
   padding: 0.3rem; }
 
 .table-bordered {
-  border: 1px solid #2c2e33; }
+  border: 1px solid ; }
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #2c2e33; }
@@ -11419,7 +11419,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #191c24;
+  background-color: #325E4B;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem; }
@@ -12875,7 +12875,7 @@ button.bg-danger:focus {
   background-color: #fb101a !important; }
 
 .bg-light {
-  background-color: #ffffff !important; }
+  background-color: #262623 !important; }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
@@ -15305,7 +15305,7 @@ a.text-dark:hover, a.text-dark:focus {
     
     .table td,
     .jsgrid .jsgrid-table td, .table th, .jsgrid .jsgrid-table th {
-      background-color: #ffffff !important; }
+      background-color: transparent !important; }
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #dee2e6 !important; }
@@ -15781,7 +15781,7 @@ code {
 
 /* Footer */
 .footer {
-  background:#2c409c;
+  background:#325E4B;
   padding: 20px 1rem;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -16973,7 +16973,7 @@ code {
   .jsgrid .jsgrid-table .jsgrid-filter-row select::placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::placeholder, .select2-container--default .select2-selection--single::placeholder, .select2-container--default .select2-selection--single .select2-search__field::placeholder, .typeahead::placeholder,
   .tt-query::placeholder,
   .tt-hint::placeholder {
-    color: #6c7293;
+    color: #EFEFDA;
     font-size: 0.875rem; }
 
 .navbar .form-control, .navbar .asColorPicker-input, .navbar .dataTables_wrapper select, .dataTables_wrapper .navbar select, .navbar .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .navbar input[type=text],
@@ -17902,12 +17902,12 @@ div.tagsinput {
 /* Tables */
 .table, .jsgrid .jsgrid-table {
   margin-bottom: 0;
-  color: #6c7293; }
+  color: #EFEFDA; }
   .table thead th, .jsgrid .jsgrid-table thead th {
     border-top: 0;
     border-bottom-width: 1px;
     font-weight: 500;
-    color: #6c7293; }
+    color: #EFEFDA; }
     .table thead th i, .jsgrid .jsgrid-table thead th i {
       margin-left: 0.325rem; }
   .table th, .jsgrid .jsgrid-table th,
@@ -21146,7 +21146,7 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: linear-gradient(0deg, rgba(44,64,156,0.6628851369649422) 0%, rgba(34,193,195,1) 100%);
+  background: linear-gradient(90deg, rgba(79,115,95,1) 0%, rgba(166,165,152,1) 50%, rgba(242,241,223,1) 100%);
   padding: 1.875rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;
