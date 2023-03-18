@@ -8882,7 +8882,7 @@ pre {
   .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=number], .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus,
   .tt-query:focus,
   .tt-hint:focus {
-    color: #495057;
+    color: #EFEFDA;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
@@ -9335,8 +9335,8 @@ fieldset:disabled .wizard > .actions a,
 
 .btn-primary, .wizard > .actions a {
   color: #fff;
-  background-color: #0090e7;
-  border-color: #0090e7; }
+  background-color: #B58A1F;
+  border-color: #B58A1F; }
   .btn-primary:hover, .wizard > .actions a:hover {
     color: #fff;
     background-color: #0078c1;

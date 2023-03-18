@@ -45,7 +45,7 @@
                             </div>
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">Resultados-PB</h5>
-                                <span>Umarizal-Uzl</span>
+                                <span>UZL-Apostas</span>
                             </div>
                         </div>
                         <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -170,7 +170,7 @@
                             <h4 class="card-title">Veja quantas vezes seu bicho saiu hoje do 1º ao 10º</h4>
                             <form  method="POST">
                             <div class="add-items d-flex">
-                              <input type="text" name="bicho" class="form-control todo-list-input" placeholder="Pesquise o bicho">
+                              <input type="text" name="bicho" class="form-control todo-list-input" maxlength="10" placeholder="Pesquise o bicho">
                               <button class="add btn btn-primary">Pesquisar</button>
                             </div>
                             </form>
@@ -213,7 +213,7 @@
                               <!-- <p class="text-muted mb-1 small">Até ontem</p> -->
                               <form method="POST">
                                   <div class="add-items d-flex">
-                                      <input type="text" name="milhar" class="form-control todo-list-input" placeholder="Pesquise a milhar">
+                                      <input type="text" name="milhar" class="form-control todo-list-input" maxlength="5" placeholder="Pesquise a milhar">
                                       <button class="add btn btn-primary">Pesquisar</button>
                                   </div>
                               </form>
@@ -391,17 +391,17 @@
                     <div class="col-sm-4 grid-margin">
                       <div class="card">
                         <div class="card-body">
-                          <h5>Veado</h5>
+                          <h5>Cobra</h5>
                           <div class="row">
                             <div class="col-8 col-sm-12 col-xl-8 my-auto">
                               <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">5495</h2>
+                                <h2 class="mb-0">4233</h2>
                                 <p class="text-success ml-2 mb-0 font-weight-medium">Milhar</p>
                               </div>
                               <!-- <h6 class="text-muted font-weight-normal">71.38% Chances de sair</h6> -->
                             </div>
                             <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                              <img src="{{url_for('static', filename='imagens/bichos-t/veado.png')}}" height="70" width="70" alt="">
+                              <img src="{{url_for('static', filename='imagens/bichos-t/cobra.png')}}" height="70" width="70" alt="">
                               <!-- <i class="icon-lg mdi mdi-codepen text-primary ml-auto"></i>  -->
                             </div>
                           </div>
@@ -413,17 +413,17 @@
                     <div class="col-sm-4 grid-margin">
                       <div class="card">
                         <div class="card-body">
-                          <h5>Àguia</h5>
+                          <h5>Camelo</h5>
                           <div class="row">
                             <div class="col-8 col-sm-12 col-xl-8 my-auto">
                               <div class="d-flex d-sm-block d-md-flex align-items-center">
-                                <h2 class="mb-0">7908</h2>
+                                <h2 class="mb-0">3132</h2>
                                 <p class="text-success ml-2 mb-0 font-weight-medium">Milhar</p>
                               </div>
                               <!-- <h6 class="text-muted font-weight-normal">.38% Chances de sair</h6> -->
                             </div>
                             <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
-                              <img src="{{url_for('static', filename='imagens/bichos-t/águia.png')}}" height="70" width="70" alt="">
+                              <img src="{{url_for('static', filename='imagens/bichos-t/camelo.png')}}" height="70" width="70" alt="">
                               <!-- <i class="icon-lg mdi mdi-codepen text-primary ml-auto"></i>  -->
                             </div>
                           </div>
@@ -530,18 +530,18 @@
                                 {% endfor %}
 
                                 {% for bicho in cabeca %} 
-                                {% if bicho[2] == '24' %}
+                                {% if bicho[2] == '09' %}
                                 <div class="preview-item border-bottom">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-primary">
-                                          <img src="{{url_for('static', filename='imagens/bichos-t/veado.png')}}" alt=""> 
+                                          <img src="{{url_for('static', filename='imagens/bichos-t/cobra.png')}}" alt=""> 
                                           <!-- <i class="mdi mdi-file-document"></i> -->
                                         </div>
                                     </div>
                                     <div class="preview-item-content d-sm-flex flex-grow">
                                       <div class="flex-grow">
                                         <h6 class="preview-subject">Saiu: {{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Palpite 5495</p>
+                                        <p class="text-muted mb-0">Palpite 4233</p>
                                       </div>
                                       <div class="mr-auto text-sm-right pt-2 pt-sm-0">
                                         <!-- <p class="text-muted">{{bicho[4]}}</p> -->
@@ -553,18 +553,18 @@
                                 {% endfor %}
 
                                 {% for bicho in cabeca %} 
-                                {% if bicho[2] == '02' %}
+                                {% if bicho[2] == '08' %}
                                 <div class="preview-item border-bottom">
                                     <div class="preview-thumbnail">
                                       <div class="preview-icon bg-primary">
-                                        <img src="{{url_for('static', filename='imagens/bichos-t/águia.png')}}" alt=""> 
+                                        <img src="{{url_for('static', filename='imagens/bichos-t/camelo.png')}}" alt=""> 
                                         <!-- <i class="mdi mdi-file-document"></i> -->
                                       </div>
                                     </div>
                                     <div class="preview-item-content d-sm-flex flex-grow">
                                       <div class="flex-grow">
                                         <h6 class="preview-subject">Saiu: {{bicho[1]}}</h6>
-                                        <p class="text-muted mb-0">Palpite: 7908</p>
+                                        <p class="text-muted mb-0">Palpite: 3132</p>
                                       </div>
                                       <div class="mr-auto text-sm-right pt-2 pt-sm-0">
                                         <!-- <p class="text-muted">{{bicho[4]}}</p> -->
