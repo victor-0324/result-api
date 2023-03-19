@@ -73,10 +73,10 @@ def Atrasados():
         return tabela
         
 
-apostar_app = Blueprint("apostar_app", __name__, url_prefix="/apostar", template_folder='templates',static_folder='static')
+apostar_app = Blueprint("apostar_app", __name__, url_prefix="/", template_folder='templates',static_folder='static')
 
 # Tela de apostar
-@apostar_app.route("/", methods=["GET", "POST"])
+@apostar_app.route("/todos-os-bichos", methods=["GET", "POST"])
 def mostrar():   
     return render_template("pages/apostar/mostrar.html")
 
