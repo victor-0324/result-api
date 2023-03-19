@@ -109,7 +109,7 @@ def statistica():
     todos = busca_nos_10.groupby(['Bichos']).size().reset_index(name='counts')
     menos_decimos = todos.sort_values(by='counts', ascending=True)
     nos_decimos = todos.sort_values(by='counts', ascending=False)
-    nos_decimos = nos_decimos.head(13).to_dict(orient='records')
+    nos_decimos = nos_decimos.head(12).to_dict(orient='records')
     menos_decimo = menos_decimos.head(12).to_dict(orient='records')
     if request.method == 'POST':
         # Pesquisa milhar 

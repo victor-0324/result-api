@@ -21146,7 +21146,7 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: linear-gradient(90deg, rgba(79,115,95,1) 0%, rgba(166,165,152,1) 50%, rgba(242,241,223,1) 100%);
+  background: linear-gradient(90deg, rgba(50,94,75,1) 0%, rgba(166,165,152,1) 66%, rgba(86,89,82,1) 100%);
   padding: 1.875rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;
@@ -21155,5 +21155,9 @@ div.tagsinput {
 /*# sourceMappingURL=maps/style.css.map */
 
 .resultado{
+  padding: 1.875rem 1.75rem;
+  width: 100%;
+  -webkit-flex-grow: 1;
+  flex-grow: 1; 
   text-align: center;
 }
