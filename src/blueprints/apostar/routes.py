@@ -105,6 +105,8 @@ def statistica():
     top_m = milhares.iloc[1:].head(16).to_dict(orient='records')
      
 #   Quantas vezes cada Bicho saio do 1º ao 10º
+
+
     busca_nos_10 = df[df['Posicao'] >= '1º']
     todos = busca_nos_10.groupby(['Bichos']).size().reset_index(name='counts')
     menos_decimos = todos.sort_values(by='counts', ascending=True)
@@ -144,4 +146,5 @@ def statistica():
                 encontrados = []
                 vezes = 0
             return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado)
-    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado)
+    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado) 
+

@@ -70,8 +70,8 @@ initial_app = Blueprint("initial_app", __name__, url_prefix="/", template_folder
 # Tela Iniciarl do app
 @initial_app.route("/", methods=["GET", "POST"])
 def mostrar():
-          
     hrs_0 = Tabela()
     data = Horario()
     texto = Texto()
+    print(hrs_0)
     return render_template("pages/initial/index.html",hrs_0=hrs_0, data=data, texto=texto)
