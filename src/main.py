@@ -7,7 +7,6 @@ def init_app():
     # Configuração do app
     app.secret_key = "vitorvitoriaeyaramariaauvesdacosta"
 
-
     with app.app_context(): 
 
          # Aplicativo inicial
