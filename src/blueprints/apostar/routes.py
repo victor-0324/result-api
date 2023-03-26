@@ -81,7 +81,7 @@ def mostrar():
     return render_template("pages/apostar/mostrar.html")
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
-def statistica():  
+def statistica(): 
     atrasado = Atrasados() 
     ver, cabeca = Bichos()
     nomes_bichos = [item[3] for item in cabeca if len(item) > 3]
@@ -93,6 +93,7 @@ def statistica():
                     '1': 'Milhar', 
                     '2': 'Grupo', 
                     '3': 'Bichos'}, inplace=True)
+                    
 # Top 10 mais e menos que sairam
     df_posicao_1 = df[df['Posicao'] == '1º']
     agrupado = df_posicao_1.groupby(['Bichos']).size().reset_index(name='counts')
@@ -101,12 +102,12 @@ def statistica():
     menos_frequentes = agrupado.head(12).to_dict(orient='records')
     bichos_mais_frequentes  = agrupado_mas.head(13).to_dict(orient='records')
     print(bichos_mais_frequentes)
-#  Top 10 milhar
+# Top 10 milhar
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
     top_m = milhares.iloc[1:].head(16).to_dict(orient='records')
      
-#   Quantas vezes cada Bicho saio do 1º ao 10º
+# Quantas vezes cada Bicho saio do 1º ao 10º
     busca_nos_10 = df[df['Posicao'] >= '1º']
     todos = busca_nos_10.groupby(['Bichos']).size().reset_index(name='counts')
     menos_decimos = todos.sort_values(by='counts', ascending=True)

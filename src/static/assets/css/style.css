@@ -21156,9 +21156,6 @@ div.tagsinput {
 
 .resultado{
   padding: 1.875rem 1.75rem;
-  width: 100%;
-  -webkit-flex-grow: 1;
-  flex-grow: 1; 
   text-align: center;
 }
 
