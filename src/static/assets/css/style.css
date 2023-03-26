@@ -21161,3 +21161,7 @@ div.tagsinput {
   flex-grow: 1; 
   text-align: center;
 }
+
+.bicho-sombreado {
+  background-color: #4F735F;
+}

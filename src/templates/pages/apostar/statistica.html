@@ -632,92 +632,94 @@
                     </div>
                   </div>
                   <br>
+                  <h3>Nesta seção, apresentamos os bichos que mais e menos saíram </h3>
+                  <h4>Os bichos marcados indicam os que sairam hoje na 1º posição </h4><br>
                   <div class="row">
-                  <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex flex-row justify-content-between">
-                            <h5 class="card-title">Os 13 bichos que mais<br>saiu na 1º posição</h5> <br>
-                            <p class="text-muted mb-1 small">Ate ontem</p>
-                          </div>
-                          <div class="preview-list">
-                            {% for bicho in bichos_mais_frequentes %}
-                            <div class="preview-item border-bottom">
-                                <div class="preview-thumbnail">
-                                  <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle">
-                                </div>
-                                <div class="preview-item-content d-flex flex-grow">
-                                    <div class="flex-grow">
-                                        <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                                            <h6 class="preview-subject">{{ bicho.Bichos }}</h6>
-                                            <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                        
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex flex-row justify-content-between">
-                            <h5 class="card-title">As 13 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
-                            <p class="text-muted mb-1 small">Até ontem</p>
-                          </div>
-                          <div class="preview-list">
-                            {% for bicho in top_m %}
-                            <div class="preview-item border-bottom">
-                              
-                                <div class="preview-item-content d-flex flex-grow">
-                                    <div class="flex-grow">
-                                        <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                                            <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
-                                            <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                        
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                       <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex flex-row justify-content-between">
-                            <h5 class="card-title">Os 12 bichos que menos<br>saiu na 1º posição</h5> <br>
-                            
-                            <p class="text-muted mb-1 small">Até ontem</p>
-                          </div>
-                          <div class="preview-list">
-                            {% for bicho in menos_frequentes %}
-                            <div class="preview-item border-bottom">
-                                <div class="preview-thumbnail">
-                                  <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle">
-                                </div>
-                                <div class="preview-item-content d-flex flex-grow">
-                                    <div class="flex-grow">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="d-flex flex-row justify-content-between">
+                                <h5 class="card-title">Os 13 bichos que mais<br>saiu na 1º posição</h5> <br>
+                                <p class="text-muted mb-1 small">Ate ontem</p>
+                              </div>
+                              <div class="preview-list">
+                                {% for bicho in bichos_mais_frequentes %}
+                                  <div class="preview-item border-bottom{% if bicho.Bichos in nomes_bichos %} bicho-sombreado{% endif %}">
+                                    <div class="preview-thumbnail">
+                                      <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle">
+                                    </div>
+                                    <div class="preview-item-content d-flex flex-grow">
+                                      <div class="flex-grow">
                                         <div class="d-flex d-md-block d-xl-flex justify-content-between">
-                                            <h6 class="preview-subject">{{ bicho.Bichos }}</h6>
-                                            <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                          <h6 class="preview-subject">{{ bicho.Bichos }}</h6>
+                                          <h6 class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                {% endfor %}
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="d-flex flex-row justify-content-between">
+                                <h5 class="card-title">As 13 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                <p class="text-muted mb-1 small">Até ontem</p>
+                              </div>
+                              <div class="preview-list">
+                                {% for bicho in top_m %}
+                                <div class="preview-item border-bottom{% if bicho.Milhar in ver %} bicho-sombreado{% endif %}">         
+                                    <div class="preview-item-content d-flex flex-grow">
+                                        <div class="flex-grow">
+                                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
+                                                <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            {% endfor %}
+                            
+                              </div>
                             </div>
-                        {% endfor %}
-                        
                           </div>
                         </div>
-                      </div>
+                          <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="d-flex flex-row justify-content-between">
+                                <h5 class="card-title">Os 12 bichos que menos<br>saiu na 1º posição</h5> <br>
+                                
+                                <p class="text-muted mb-1 small">Até ontem</p>
+                              </div>
+                              <div class="preview-list">
+                                {% for bicho in menos_frequentes %}
+                                <div class="preview-item border-bottom{% if bicho.Bichos in nomes_bichos %} bicho-sombreado{% endif %}">
+                                    <div class="preview-thumbnail">
+                                      <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle">
+                                    </div>
+                                    <div class="preview-item-content d-flex flex-grow">
+                                        <div class="flex-grow">
+                                            <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                <h6 class="preview-subject">{{ bicho.Bichos }}</h6>
+                                                <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
                     </div>
-                    
-                 </div>
+                
                 <br>
                   <div class="row">
                     <div class="col-md-6 col-xl-6 grid-margin stretch-card">
@@ -729,7 +731,7 @@
                           </div>
                           <div class="preview-list">
                             {% for bicho in nos_decimos %}
-                            <div class="preview-item border-bottom">
+                            <div class="preview-item border-bottom{% if bicho.Bichos in nomes_bichos %} bicho-sombreado{% endif %}">
                                 <div class="preview-thumbnail">
                                   <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle">
                                 </div>
@@ -757,7 +759,7 @@
                           </div>
                           <div class="preview-list">
                             {% for bicho in menos_decimo %}
-                            <div class="preview-item border-bottom">
+                            <div class="preview-item border-bottom{% if bicho.Bichos in nomes_bichos %} bicho-sombreado{% endif %}">
                                 <div class="preview-thumbnail">
                                   <img src="{{ url_for('static', filename='imagens/bichos-t/' ~ bicho.Bichos|lower ~ '.png') }}" alt="image" class="rounded-circle">
                                 </div>
