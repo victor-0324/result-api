@@ -85,7 +85,7 @@ def statistica():
     atrasado = Atrasados() 
     ver, cabeca = Bichos()
     nomes_bichos = [item[3] for item in cabeca if len(item) > 3]
-   
+
     df = pd.read_csv("bichos.csv")
     df = df.drop(columns=['Unnamed: 0'])
     df = df.dropna()
@@ -101,7 +101,6 @@ def statistica():
     agrupado = agrupado.sort_values(by='counts', ascending=True)
     menos_frequentes = agrupado.head(12).to_dict(orient='records')
     bichos_mais_frequentes  = agrupado_mas.head(13).to_dict(orient='records')
-    print(bichos_mais_frequentes)
 # Top 10 milhar
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
@@ -112,10 +111,10 @@ def statistica():
     todos = busca_nos_10.groupby(['Bichos']).size().reset_index(name='counts')
     menos_decimos = todos.sort_values(by='counts', ascending=True)
     nos_decimos = todos.sort_values(by='counts', ascending=False)
-    nos_decimos = nos_decimos.head(13).to_dict(orient='records')
-    menos_decimo = menos_decimos.head(12).to_dict(orient='records')
+    nos_decimos = nos_decimos.head(12).to_dict(orient='records')
+    menos_decimo = menos_decimos.head(13).to_dict(orient='records')
     if request.method == 'POST':
-        # Pesquisa milhar 
+# Pesquisa milhar 
         milhar = request.form.get("milhar")
         bicho = request.form.get("bicho")
         if 'milhar' in request.form:
@@ -141,7 +140,6 @@ def statistica():
         elif 'bicho' in request.form:
             if bicho is not None:
                 encontrados = list(filter(lambda x: bicho in x, ver))
-
                 vezes = len(encontrados)
             else:
                 encontrados = []
