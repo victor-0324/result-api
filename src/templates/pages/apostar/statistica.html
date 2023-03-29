@@ -696,12 +696,12 @@
                           <div class="card">
                             <div class="card-body">
                               <div class="d-flex flex-row justify-content-between">
-                                <h5 class="card-title">As 13 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                <h5 class="card-title">As 16 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
                                 <p class="text-muted mb-1 small">Até ontem</p>
                               </div>
                               <div class="preview-list">
                                 {% for bicho in top_m %}
-                                <div class="preview-item border-bottom{% if bicho.Milhar in ver %} bicho-sombreado{% endif %}">         
+                                <div class="preview-item border-bottom{% if bicho.Milhar in minha_que_saiu %} bicho-sombreado{% endif %}">         
                                     <div class="preview-item-content d-flex flex-grow">
                                         <div class="flex-grow">
                                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
@@ -745,7 +745,7 @@
                         {% endfor %}
                           </div>
                         </div>
-                        <a href="https://api.whatsapp.com/send?text=Os%2013%20bichos%20que%20mais%20saiu%20do%201º%20ao%2010º%0A%0A{% for bicho in nos_decimos %}{{ loop.index }}. {{ bicho.Bichos }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
+                        <a href="https://api.whatsapp.com/send?text=Os%20%20bichos%20mais%20saiu%20do%201º%20ao%2010º%0A%0A{% for bicho in nos_decimos %}{{ loop.index }}. {{ bicho.Bichos }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                       </div>
                     </div>
                     <div class="col-md-6 col-xl-6 grid-margin stretch-card">
@@ -804,7 +804,8 @@
                             </table>
                           </div>
                       </div>
-                      <a href="https://api.whatsapp.com/send?text=Os%2013%20bichos%20mais%20atrasado%20%0A%0A{% for item in atrasado %}{{ loop.index }}. {{ item.bicho }} - {{ item.milhar }} - {{ item.data }} %0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
+                      {% set header = "Bicho - Milhar - Data" %}
+                      <a href="https://api.whatsapp.com/send?text=Última%20vez%20que%20os%20bichos%20saíram%20%0A%0A0=%20{{ header }}%0A{% for item in atrasado %}{{ loop.index }}. {{ item.bicho }} - {{ item.milhar }} - {{ item.data }} %0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                     </div>
                   </div>
                 </div>
