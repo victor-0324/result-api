@@ -86,7 +86,7 @@ def statistica():
     ver, cabeca = Bichos()
     nomes_bichos = [item[3] for item in cabeca if len(item) > 3]
     minha_que_saiu = [item[1]  for item in ver if len(item) > 1]
-
+    milhar_se_saiu = list(map(int, minha_que_saiu))
     df = pd.read_csv("bichos.csv")
     df = df.drop(columns=['Unnamed: 0'])
     df = df.dropna()
@@ -106,7 +106,7 @@ def statistica():
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
     top_m = milhares.iloc[1:].head(16).to_dict(orient='records')
-
+    print(top_m)
 # Quantas vezes cada Bicho saio do 1º ao 10º
     busca_nos_10 = df[df['Posicao'] >= '1º']
     todos = busca_nos_10.groupby(['Bichos']).size().reset_index(name='counts')
@@ -137,7 +137,7 @@ def statistica():
             resultado = df.loc[df['Milhar'] == milhar_int].to_dict('records')
             valor = len(resultado)
             pesquisa_m = milhar
-            return render_template("pages/apostar/statistica.html", pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,valor=valor,resultado=resultado,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado,nomes_bichos=nomes_bichos,minha_que_saiu=minha_que_saiu)
+            return render_template("pages/apostar/statistica.html", pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,valor=valor,resultado=resultado,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado,nomes_bichos=nomes_bichos,milhar_se_saiu=milhar_se_saiu)
         elif 'bicho' in request.form:
             if bicho is not None:
                 encontrados = list(filter(lambda x: bicho in x, ver))
@@ -145,6 +145,6 @@ def statistica():
             else:
                 encontrados = []
                 vezes = 0
-            return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado,nomes_bichos=nomes_bichos,minha_que_saiu=minha_que_saiu)
-    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado,nomes_bichos=nomes_bichos,minha_que_saiu=minha_que_saiu) 
+            return render_template("pages/apostar/statistica.html",bichos=encontrados, vezes=vezes, pesquisa=bicho, cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,pesquisa_m=milhar,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado,nomes_bichos=nomes_bichos,milhar_se_saiu=milhar_se_saiu)
+    return render_template("pages/apostar/statistica.html",cabeca=cabeca, menos_frequentes=menos_frequentes,bichos_mais_frequentes=bichos_mais_frequentes,top_m=top_m,nos_decimos=nos_decimos,menos_decimo=menos_decimo,atrasado=atrasado,nomes_bichos=nomes_bichos,milhar_se_saiu=milhar_se_saiu) 
 
