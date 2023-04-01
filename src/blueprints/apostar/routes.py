@@ -106,7 +106,7 @@ def statistica():
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
     top_m = milhares.iloc[1:].head(16).to_dict(orient='records')
-    print(top_m)
+    
 # Quantas vezes cada Bicho saio do 1º ao 10º
     busca_nos_10 = df[df['Posicao'] >= '1º']
     todos = busca_nos_10.groupby(['Bichos']).size().reset_index(name='counts')

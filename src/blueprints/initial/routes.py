@@ -73,5 +73,5 @@ def mostrar():
     hrs_0 = Tabela()
     data = Horario()
     texto = Texto()
-    print(hrs_0)
+
     return render_template("pages/initial/index.html",hrs_0=hrs_0, data=data, texto=texto)
