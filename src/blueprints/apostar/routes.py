@@ -77,7 +77,7 @@ apostar_app = Blueprint("apostar_app", __name__, url_prefix="/", template_folder
 
 # Tela de apostar
 @apostar_app.route("/todos-os-bichos", methods=["GET", "POST"])
-def mostrar():   
+def mostrar():
     return render_template("pages/apostar/mostrar.html")
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
@@ -102,6 +102,7 @@ def statistica():
     agrupado = agrupado.sort_values(by='counts', ascending=True)
     menos_frequentes = agrupado.head(12).to_dict(orient='records')
     bichos_mais_frequentes  = agrupado_mas.head(13).to_dict(orient='records')
+    
 # Top 10 milhar
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
@@ -112,8 +113,8 @@ def statistica():
     todos = busca_nos_10.groupby(['Bichos']).size().reset_index(name='counts')
     menos_decimos = todos.sort_values(by='counts', ascending=True)
     nos_decimos = todos.sort_values(by='counts', ascending=False)
-    nos_decimos = nos_decimos.head(12).to_dict(orient='records')
-    menos_decimo = menos_decimos.head(13).to_dict(orient='records')
+    nos_decimos = nos_decimos.head(13).to_dict(orient='records')
+    menos_decimo = menos_decimos.head(12).to_dict(orient='records')
     if request.method == 'POST':
 # Pesquisa milhar 
         milhar = request.form.get("milhar")
