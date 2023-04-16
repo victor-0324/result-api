@@ -314,160 +314,161 @@
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    <h2>
-                        Jogo do Bicho é a diversão garantida para toda a família! Com um vasto leque de opções de animais, cada um com seu número correspondente, você tem a chance de ganhar prêmios incríveis. Jogue todos os dias, escolha o seu animal de sorte e acompanhe os resultados. Não perca essa oportunidade de tentar a sorte e ganhar grandes prêmios! Jogue agora Jogo do Bicho!
-                    </h2> <br>
+                    <h3>Dados coletados a partir do dia 02/01/2023</h3>
+                    <h4>OS dados são atualizados no fim do dia</h4><br>
                     <div class="row">
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                             <div class="card">
-                                <img src="{{url_for('static', filename='imagens/1.png')}}"  alt=""> 
+                              <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                  <h5 class="card-title">As 16 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                  <p class="text-muted mb-1 small">Até ontem</p>
+                                </div>
+                                <div class="preview-list">
+                                  {% for bicho in milhar_menor_1 %}
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                      <div class="preview-item-content d-flex flex-grow">
+                                          <div class="flex-grow">
+                                              <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                  <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
+                                                  <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                                </div>
+                              </div>
+                             <a href="https://api.whatsapp.com/send?text=As%2016%20milhar%20que%20mais%20saiu%20do%201º%20ao%2010º%20esse%20ano%20de%202023%0A%0A{% for bicho in top_m %}{{ loop.index }}. {{ bicho.Milhar }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                             </div>
-                        </div>  
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                        </div> 
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                             <div class="card">
-                                <img src="{{url_for('static', filename='imagens/2.png')}}" alt=""> 
+                              <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                  <h5 class="card-title">As 16 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                  <p class="text-muted mb-1 small">Até ontem</p>
+                                </div>
+                                <div class="preview-list">
+                                  {% for bicho in milhar_menor_2 %}
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                      <div class="preview-item-content d-flex flex-grow">
+                                          <div class="flex-grow">
+                                              <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                  <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
+                                                  <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                                </div>
+                              </div>
+                             <a href="https://api.whatsapp.com/send?text=As%2016%20milhar%20que%20mais%20saiu%20do%201º%20ao%2010º%20esse%20ano%20de%202023%0A%0A{% for bicho in top_m %}{{ loop.index }}. {{ bicho.Milhar }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                             </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                        </div> 
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                             <div class="card">
-                            <img src="{{url_for('static', filename='imagens/3.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                        <div class="card">
-                            <img src="{{url_for('static', filename='imagens/4.png')}}" alt=""> 
-                        </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/5.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/6.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/7.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/8.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/9.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/10.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/11.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/12.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/13.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/14.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/15.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/16.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/17.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                            <img src="{{url_for('static', filename='imagens/18.png')}}" alt=""> 
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                                <img src="{{url_for('static', filename='imagens/19.png')}}" alt=""> 
-                            </div>
-                        </div>  
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                                <img src="{{url_for('static', filename='imagens/20.png')}}" alt=""> 
+                              <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                  <h5 class="card-title">As 16 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                  <p class="text-muted mb-1 small">Até ontem</p>
+                                </div>
+                                <div class="preview-list">
+                                  {% for bicho in top_m %}
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                      <div class="preview-item-content d-flex flex-grow">
+                                          <div class="flex-grow">
+                                              <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                  <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
+                                                  <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                                </div>
+                              </div>
+                             <a href="https://api.whatsapp.com/send?text=As%2016%20milhar%20que%20mais%20saiu%20do%201º%20ao%2010º%20esse%20ano%20de%202023%0A%0A{% for bicho in top_m %}{{ loop.index }}. {{ bicho.Milhar }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                             </div>
                         </div>       
-                        
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                             <div class="card">
-                                <img src="{{url_for('static', filename='imagens/21.png')}}" alt=""> 
+                              <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                  <h5 class="card-title">As 16 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                  <p class="text-muted mb-1 small">Até ontem</p>
+                                </div>
+                                <div class="preview-list">
+                                  {% for bicho in milhar1 %}
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                      <div class="preview-item-content d-flex flex-grow">
+                                          <div class="flex-grow">
+                                              <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                  <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
+                                                  <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                                </div>
+                              </div>
+                             <a href="https://api.whatsapp.com/send?text=As%2016%20milhar%20que%20mais%20saiu%20do%201º%20ao%2010º%20esse%20ano%20de%202023%0A%0A{% for bicho in top_m %}{{ loop.index }}. {{ bicho.Milhar }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                             </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                        </div> 
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                             <div class="card">
-                                <img src="{{url_for('static', filename='imagens/22.png')}}" alt=""> 
+                              <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                  <h5 class="card-title">As 16 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                  <p class="text-muted mb-1 small">Até ontem</p>
+                                </div>
+                                <div class="preview-list">
+                                  {% for bicho in milhar2 %}
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                      <div class="preview-item-content d-flex flex-grow">
+                                          <div class="flex-grow">
+                                              <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                  <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
+                                                  <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                                </div>
+                              </div>
+                             <a href="https://api.whatsapp.com/send?text=As%2016%20milhar%20que%20mais%20saiu%20do%201º%20ao%2010º%20esse%20ano%20de%202023%0A%0A{% for bicho in top_m %}{{ loop.index }}. {{ bicho.Milhar }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                             </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                        </div> 
+                        <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                             <div class="card">
-                                <img src="{{url_for('static', filename='imagens/23.png')}}" alt=""> 
+                              <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                  <h5 class="card-title">As 16 milhar que mais<br>saiu do 1º ao 10º</h5> <br>
+                                  <p class="text-muted mb-1 small">Até ontem</p>
+                                </div>
+                                <div class="preview-list">
+                                  {% for bicho in milhar3 %}
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                      <div class="preview-item-content d-flex flex-grow">
+                                          <div class="flex-grow">
+                                              <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                                  <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
+                                                  <h6  class="text-muted text-small">{{ bicho.counts }} vezes</h6>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                                </div>
+                              </div>
+                             <a href="https://api.whatsapp.com/send?text=As%2016%20milhar%20que%20mais%20saiu%20do%201º%20ao%2010º%20esse%20ano%20de%202023%0A%0A{% for bicho in top_m %}{{ loop.index }}. {{ bicho.Milhar }} - {{ bicho.counts }} vezes%0A{% endfor %}%0AConfira tudo em: https://jogodobicho.up.railway.app/"  class="btn btn-success btn-block" target="_blank">Compartilhar no WhatsApp</a>
                             </div>
-                        </div>
-
-                        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                                <img src="{{url_for('static', filename='imagens/24.png')}}" alt=""> 
-                            </div>
-                        </div>  
-                        
-                        <div class="col-xl-5 col-sm-6 grid-margin stretch-card">
-                            <div class="card">
-                                <img src="{{url_for('static', filename='imagens/25.png')}}" alt=""> 
-                            </div>
-                        </div>  
-                       
+                        </div>       
                     </div>
                 </div>
                 <!-- content-wrapper ends -->

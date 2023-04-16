@@ -78,7 +78,29 @@ apostar_app = Blueprint("apostar_app", __name__, url_prefix="/", template_folder
 # Tela de apostar
 @apostar_app.route("/todos-os-bichos", methods=["GET", "POST"])
 def mostrar():
-    return render_template("pages/apostar/mostrar.html")
+   
+    ver, cabeca = Bichos()
+    nomes_bichos = [item[3] for item in cabeca if len(item) > 3]
+    minha_que_saiu = [item[1]  for item in ver if len(item) > 1]
+    milhar_se_saiu = list(map(int, minha_que_saiu))
+    df = pd.read_csv("bichos.csv")
+    df = df.drop(columns=['Unnamed: 0'])
+    df = df.dropna()
+    df.rename(columns={'0': 'Posicao', 
+                    '1': 'Milhar', 
+                    '2': 'Grupo', 
+                    '3': 'Bichos'}, inplace=True)
+
+    top = df.groupby(['Milhar']).size().reset_index(name='counts')
+    milhares = top.sort_values(by='counts', ascending=False)
+    top_m = milhares.iloc[1223:].head(16).to_dict(orient='records')
+    milhar_menor_1 = milhares.iloc[53:].head(16).to_dict(orient='records')
+    milhar_menor_2 = milhares.iloc[95:].head(16).to_dict(orient='records')
+    milhar1= milhares.iloc[2223:].head(16).to_dict(orient='records')
+    milhar2 = milhares.iloc[443:].head(16).to_dict(orient='records')
+    milhar3 = milhares.iloc[805:].head(16).to_dict(orient='records')
+    return render_template("pages/apostar/mostrar.html",top_m=top_m,milhar_menor_1=milhar_menor_1,milhar_menor_2=milhar_menor_2,milhar1=milhar1,milhar2=milhar2,milhar3=milhar3)
+
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
 def statistica(): 
