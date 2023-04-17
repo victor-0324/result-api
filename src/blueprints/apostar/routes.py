@@ -96,10 +96,11 @@ def mostrar():
     top_m = milhares.iloc[1223:].head(16).to_dict(orient='records')
     milhar_menor_1 = milhares.iloc[53:].head(16).to_dict(orient='records')
     milhar_menor_2 = milhares.iloc[95:].head(16).to_dict(orient='records')
-    milhar1= milhares.iloc[2223:].head(16).to_dict(orient='records')
+    milhar1 = milhares.iloc[2223:].head(16).to_dict(orient='records')
     milhar2 = milhares.iloc[443:].head(16).to_dict(orient='records')
     milhar3 = milhares.iloc[805:].head(16).to_dict(orient='records')
-    return render_template("pages/apostar/mostrar.html",top_m=top_m,milhar_menor_1=milhar_menor_1,milhar_menor_2=milhar_menor_2,milhar1=milhar1,milhar2=milhar2,milhar3=milhar3)
+
+    return render_template("pages/apostar/mostrar.html",milhar_se_saiu=milhar_se_saiu,top_m=top_m,milhar_menor_1=milhar_menor_1,milhar_menor_2=milhar_menor_2,milhar1=milhar1,milhar2=milhar2,milhar3=milhar3)
 
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
@@ -138,7 +139,7 @@ def statistica():
     nos_decimos = nos_decimos.head(13).to_dict(orient='records')
     menos_decimo = menos_decimos.head(12).to_dict(orient='records')
     if request.method == 'POST':
-# Pesquisa milhar 
+    # Pesquisa milhar 
         milhar = request.form.get("milhar")
         bicho = request.form.get("bicho")
         if 'milhar' in request.form:
