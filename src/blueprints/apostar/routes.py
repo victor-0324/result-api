@@ -93,14 +93,14 @@ def mostrar():
 
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
-    top_m = milhares.iloc[1223:].head(16).to_dict(orient='records')
-    milhar_menor_1 = milhares.iloc[53:].head(16).to_dict(orient='records')
-    milhar_menor_2 = milhares.iloc[95:].head(16).to_dict(orient='records')
-    milhar1 = milhares.iloc[2223:].head(16).to_dict(orient='records')
-    milhar2 = milhares.iloc[443:].head(16).to_dict(orient='records')
-    milhar3 = milhares.iloc[805:].head(16).to_dict(orient='records')
+    milhar1 = milhares.iloc[20:].head(16).to_dict(orient='records')
+    milhar2 = milhares.iloc[79:].head(16).to_dict(orient='records')
+    milhar3 = milhares.iloc[209:].head(16).to_dict(orient='records')
+    milhar4 = milhares.iloc[723:].head(16).to_dict(orient='records')
+    milhar5 = milhares.iloc[1043:].head(16).to_dict(orient='records')
+    milhar6 = milhares.iloc[3305:].head(16).to_dict(orient='records')
 
-    return render_template("pages/apostar/mostrar.html",milhar_se_saiu=milhar_se_saiu,top_m=top_m,milhar_menor_1=milhar_menor_1,milhar_menor_2=milhar_menor_2,milhar1=milhar1,milhar2=milhar2,milhar3=milhar3)
+    return render_template("pages/apostar/mostrar.html",milhar_se_saiu=milhar_se_saiu,milhar1=milhar1,milhar2=milhar2,milhar3=milhar3,milhar4=milhar4,milhar5=milhar5,milhar6=milhar6)
 
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
