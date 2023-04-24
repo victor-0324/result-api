@@ -73,6 +73,51 @@ def Atrasados():
         return tabela
         
 
+    # extrai as dezenas correspondentes ao bicho pesquisado
+    dezenas = [int(bicho_pesquisado[-2:])]
+    for i in range(3):
+        dezenas.append(dezenas[i] + 10)
+    # filtra o dataframe para encontrar milhares correspondentes
+    milhares = []
+    for d in dezenas:
+        milhares.extend(df[df['Milhar'] == d]['Milhar'].tolist())
+    return milhares
+
+dezenas_bicho = {
+    'avestruz': ['01', '02', '03', '04'],
+    'aguia': ['05', '06', '07', '08'],
+    'burro': ['09', '10', '11', '12'],
+    'borboleta': ['13', '14', '15', '16'],
+    'cachorro': ['17', '18', '19', '20'],
+    'cabra': ['21', '22', '23', '24'],
+    'carneiro': ['25', '26', '27', '28'],
+    'camelo': ['29', '30', '31', '32'],
+    'cobra': ['33', '34', '35', '36'],
+    'coelho': ['37', '38', '39', '40'],
+    'cavalo': ['41', '42', '43', '44'],
+    'elefante': ['45', '46', '47', '48'],
+    'galo': ['49', '50', '51', '52'],
+    'gato': ['53', '54', '55', '56'],
+    'jacare': ['57', '58', '59', '60'],
+    'leao': ['61', '62', '63', '64'],
+    'macaco': ['65', '66', '67', '68'],
+    'porco': ['69', '70', '71', '72'],
+    'pavao': ['73', '74', '75', '76'],
+    'peru': ['77', '78', '79', '80'],
+    'touro': ['81', '82', '83', '84'],
+    'tigre': ['85', '86', '87', '88'],
+    'urso': ['89', '90', '91', '92'],
+    'veado': ['93', '94', '95', '96'],
+    'vaca': ['97', '98', '99', '00']
+}
+
+def encontrar_milhares(df, bicho_pesquisado):
+    # Filtra o dataframe para mostrar apenas o bicho pesquisado
+    df_filtrado = df[df['Bichos'].str.contains(bicho_pesquisado)]
+    # Encontra as milhares correspondentes ao bicho pesquisado
+    milhares_bicho = df_filtrado['Milhar'].unique().tolist()
+    return milhares_bicho
+    
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/", template_folder='templates',static_folder='static')
 
 # Tela de apostar
@@ -95,15 +140,37 @@ def mostrar():
     milhares_pos1 = milhares_pos.iloc[265:].head(20).to_dict(orient='records')
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
-    milhar1 = milhares.iloc[25:].head(16).to_dict(orient='records')
+    milhar1 = milhares.iloc[17:].head(16).to_dict(orient='records')
     milhar2 = milhares.iloc[90:].head(16).to_dict(orient='records')
     milhar3 = milhares.iloc[311:].head(16).to_dict(orient='records')
     milhar4 = milhares.iloc[823:].head(16).to_dict(orient='records')
     milhar5 = milhares.iloc[1443:].head(16).to_dict(orient='records')
     milhar6 = milhares.iloc[3305:].head(16).to_dict(orient='records')
-    
-    return render_template("pages/apostar/mostrar.html",milhares_pos1=milhares_pos1,milhar_se_saiu=milhar_se_saiu,milhar1=milhar1,milhar2=milhar2,milhar3=milhar3,milhar4=milhar4,milhar5=milhar5,milhar6=milhar6)
 
+    if request.method == "POST":
+        bicho_pesquisado = request.form.get("bicho")
+        if bicho_pesquisado:
+            # Encontra as milhares correspondentes ao bicho pesquisado
+            milhares_bicho = encontrar_milhares(df, bicho_pesquisado)
+            
+            # Encontra o índice do bicho na lista nomes_bichos
+            indice_bicho = nomes_bichos.index(bicho_pesquisado)
+            
+            # Acessa a lista de dezenas correspondente ao bicho
+            dezenas_bicho_pesquisado = dezenas_bicho[indice_bicho]
+            
+            # Filtra o dataframe para mostrar apenas o bicho pesquisado
+            df_filtrado = df[df['Bichos'].str.contains(bicho_pesquisado)]
+            
+            return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
+                                milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
+                                milhar6=milhar6, nomes_bichos=nomes_bichos, df_filtrado=df_filtrado, milhar_bicho=milhar_bicho,
+                                dezenas_bicho_pesquisado=dezenas_bicho_pesquisado)
+
+
+    return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
+                           milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
+                           milhar6=milhar6, nomes_bichos=nomes_bichos)
 
 @apostar_app.route("/statistica", methods=["GET", "POST"])
 def statistica(): 

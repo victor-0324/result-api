@@ -21163,3 +21163,7 @@ div.tagsinput {
   background-color: #4F735F;
 }
 
+.bicho-pesquisado {
+  background-color: green;
+  color: white;
+}
