@@ -4,6 +4,8 @@ import csv
 import pandas as pd 
 from bs4 import BeautifulSoup  
 from datetime import datetime
+from builtins import str
+
 
 def Bichos():
 # 1. Pegar conteudo HTML a partir da URL
@@ -110,13 +112,11 @@ dezenas_bicho = {
     'veado': ['93', '94', '95', '96'],
     'vaca': ['97', '98', '99', '00']
 }
+def get_dezenas_por_bicho(bicho):
+    if bicho in dezenas_bicho:
+        return dezenas_bicho[bicho]
+  
 
-def encontrar_milhares(df, bicho_pesquisado):
-    # Filtra o dataframe para mostrar apenas o bicho pesquisado
-    df_filtrado = df[df['Bichos'].str.contains(bicho_pesquisado)]
-    # Encontra as milhares correspondentes ao bicho pesquisado
-    milhares_bicho = df_filtrado['Milhar'].unique().tolist()
-    return milhares_bicho
     
 apostar_app = Blueprint("apostar_app", __name__, url_prefix="/", template_folder='templates',static_folder='static')
 
@@ -149,24 +149,18 @@ def mostrar():
 
     if request.method == "POST":
         bicho_pesquisado = request.form.get("bicho")
-        if bicho_pesquisado:
-            # Encontra as milhares correspondentes ao bicho pesquisado
-            milhares_bicho = encontrar_milhares(df, bicho_pesquisado)
-            
-            # Encontra o índice do bicho na lista nomes_bichos
-            indice_bicho = nomes_bichos.index(bicho_pesquisado)
-            
-            # Acessa a lista de dezenas correspondente ao bicho
-            dezenas_bicho_pesquisado = dezenas_bicho[indice_bicho]
-            
-            # Filtra o dataframe para mostrar apenas o bicho pesquisado
-            df_filtrado = df[df['Bichos'].str.contains(bicho_pesquisado)]
-            
-            return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
-                                milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
-                                milhar6=milhar6, nomes_bichos=nomes_bichos, df_filtrado=df_filtrado, milhar_bicho=milhar_bicho,
-                                dezenas_bicho_pesquisado=dezenas_bicho_pesquisado)
+        dezenas_str = get_dezenas_por_bicho(bicho_pesquisado)
+        
+        if dezenas_str is not None:
+            dezenas = dezenas_str
+        else:
+            dezenas = []
+        print(dezenas)       
 
+
+        return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
+                            milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
+                            milhar6=milhar6, nomes_bichos=nomes_bichos, dezenas=dezenas)
 
     return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
                            milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
