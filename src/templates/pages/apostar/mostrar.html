@@ -318,12 +318,13 @@
                     <h4>OS dados são atualizados no fim do dia</h4><br>
                     <form method="Post" class="mb-3">
                         <div class="input-group">
-                            <input type="text" name="bicho" class="form-control" placeholder="Digite o nome do bicho">
+                            <input type="text" name="bicho" class="form-control" placeholder="Digite o nome do bicho em minusculas">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">Buscar</button>
                             </div>
                         </div>
                     </form>
+                    <h4>Você pesquisou pelas dezenas <br>{{ dezenas }} Os números que contém estas dezenas serão destacados em azul. <br> Caso algum dessas milhar saia do 1º ao 10º durante o jogo, eles serão destacados em verde militar.</h4> <br>
                     <div class="row">
                          <div class="col-md-6 col-xl-4 grid-margin stretch-card">
                             <div class="card">
@@ -334,8 +335,8 @@
                                 </div>
                                 <div class="preview-list">
                                   {% for bicho in milhar1 %}
-                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}{% if bicho.Milhar  % 100 in dezenas %} bicho-pesquisado{% endif %}">
-                                      <div class="preview-item-content d-flex flex-grow">
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}{% if (bicho.Milhar % 100)|string in dezenas|map('string') %} bicho-pesquisado{% endif %}">
+                                    <div class="preview-item-content d-flex flex-grow">
                                           <div class="flex-grow">
                                               <div class="d-flex d-md-block d-xl-flex justify-content-between">
                                                   <h6 class="preview-subject">{{ bicho.Milhar }}</h6>
@@ -359,7 +360,7 @@
                                 </div>
                                 <div class="preview-list">
                                   {% for bicho in milhar2 %}
-                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}{% if (bicho.Milhar % 100)|string in dezenas|map('string') %} bicho-pesquisado{% endif %}">         
                                       <div class="preview-item-content d-flex flex-grow">
                                           <div class="flex-grow">
                                               <div class="d-flex d-md-block d-xl-flex justify-content-between">
@@ -384,7 +385,7 @@
                                 </div>
                                 <div class="preview-list">
                                   {% for bicho in milhar3 %}
-                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}{% if (bicho.Milhar % 100)|string in dezenas|map('string') %} bicho-pesquisado{% endif %}">         
                                       <div class="preview-item-content d-flex flex-grow">
                                           <div class="flex-grow">
                                               <div class="d-flex d-md-block d-xl-flex justify-content-between">
@@ -411,7 +412,7 @@
                                 </div>
                                 <div class="preview-list">
                                   {% for bicho in milhar4 %}
-                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}{% if (bicho.Milhar % 100)|string in dezenas|map('string') %} bicho-pesquisado{% endif %}">         
                                       <div class="preview-item-content d-flex flex-grow">
                                           <div class="flex-grow">
                                               <div class="d-flex d-md-block d-xl-flex justify-content-between">
@@ -436,7 +437,7 @@
                                 </div>
                                 <div class="preview-list">
                                   {% for bicho in milhar5 %}
-                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}{% if (bicho.Milhar % 100)|string in dezenas|map('string') %} bicho-pesquisado{% endif %}">         
                                       <div class="preview-item-content d-flex flex-grow">
                                           <div class="flex-grow">
                                               <div class="d-flex d-md-block d-xl-flex justify-content-between">
@@ -461,7 +462,7 @@
                                 </div>
                                 <div class="preview-list">
                                   {% for bicho in milhar6 %}
-                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}">         
+                                  <div class="preview-item border-bottom{% if bicho.Milhar in milhar_se_saiu %} bicho-sombreado{% endif %}{% if (bicho.Milhar % 100)|string in dezenas|map('string') %} bicho-pesquisado{% endif %}">         
                                       <div class="preview-item-content d-flex flex-grow">
                                           <div class="flex-grow">
                                               <div class="d-flex d-md-block d-xl-flex justify-content-between">

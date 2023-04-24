@@ -150,14 +150,12 @@ def mostrar():
     if request.method == "POST":
         bicho_pesquisado = request.form.get("bicho")
         dezenas_str = get_dezenas_por_bicho(bicho_pesquisado)
-        
+
         if dezenas_str is not None:
             dezenas = dezenas_str
         else:
             dezenas = []
-        print(dezenas)       
-
-
+      
         return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
                             milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
                             milhar6=milhar6, nomes_bichos=nomes_bichos, dezenas=dezenas)
