@@ -185,7 +185,7 @@ def statistica():
     agrupado_mas = agrupado.sort_values(by='counts', ascending=False)
     agrupado = agrupado.sort_values(by='counts', ascending=True)
     menos_frequentes = agrupado.head(12).to_dict(orient='records')
-    bichos_mais_frequentes  = agrupado_mas.head(13).to_dict(orient='records')
+    bichos_mais_frequentes  = agrupado_mas.head(12).to_dict(orient='records')
     
 # Top 10 milhar
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
