@@ -144,8 +144,8 @@ def mostrar():
     milhar2 = milhares.iloc[80:].head(16).to_dict(orient='records')
     milhar3 = milhares.iloc[150:].head(16).to_dict(orient='records')
     milhar4 = milhares.iloc[723:].head(16).to_dict(orient='records')
-    milhar5 = milhares.iloc[2343:].head(16).to_dict(orient='records')
-    milhar6 = milhares.iloc[3305:].head(16).to_dict(orient='records')
+    milhar5 = milhares.iloc[1543:].head(16).to_dict(orient='records')
+    milhar6 = milhares.iloc[2505:].head(16).to_dict(orient='records')
 
     if request.method == "POST":
         bicho_pesquisado = request.form.get("bicho")
@@ -185,7 +185,7 @@ def statistica():
     agrupado_mas = agrupado.sort_values(by='counts', ascending=False)
     agrupado = agrupado.sort_values(by='counts', ascending=True)
     menos_frequentes = agrupado.head(12).to_dict(orient='records')
-    bichos_mais_frequentes  = agrupado_mas.head(12).to_dict(orient='records')
+    bichos_mais_frequentes  = agrupado_mas.head(13).to_dict(orient='records')
     
 # Top 10 milhar
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
