@@ -143,9 +143,9 @@ def mostrar():
     milhar1 = milhares.iloc[17:].head(16).to_dict(orient='records')
     milhar2 = milhares.iloc[80:].head(16).to_dict(orient='records')
     milhar3 = milhares.iloc[150:].head(16).to_dict(orient='records')
-    milhar4 = milhares.iloc[723:].head(16).to_dict(orient='records')
-    milhar5 = milhares.iloc[1543:].head(16).to_dict(orient='records')
-    milhar6 = milhares.iloc[2505:].head(16).to_dict(orient='records')
+    milhar4 = milhares.iloc[903:].head(16).to_dict(orient='records')
+    milhar5 = milhares.iloc[1143:].head(16).to_dict(orient='records')
+    milhar6 = milhares.iloc[3505:].head(16).to_dict(orient='records')
 
     if request.method == "POST":
         bicho_pesquisado = request.form.get("bicho")
