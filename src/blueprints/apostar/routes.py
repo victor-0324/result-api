@@ -141,9 +141,9 @@ def mostrar():
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
     milhar1 = milhares.iloc[17:].head(16).to_dict(orient='records')
-    milhar2 = milhares.iloc[80:].head(16).to_dict(orient='records')
+    milhar2 = milhares.iloc[33:].head(16).to_dict(orient='records')
     milhar3 = milhares.iloc[150:].head(16).to_dict(orient='records')
-    milhar4 = milhares.iloc[903:].head(16).to_dict(orient='records')
+    milhar4 = milhares.iloc[503:].head(16).to_dict(orient='records')
     milhar5 = milhares.iloc[1143:].head(16).to_dict(orient='records')
     milhar6 = milhares.iloc[3505:].head(16).to_dict(orient='records')
 
