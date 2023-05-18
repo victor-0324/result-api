@@ -135,6 +135,7 @@ def mostrar():
                     '1': 'Milhar', 
                     '2': 'Grupo', 
                     '3': 'Bichos'}, inplace=True)
+
     df_pos1 = df[df['Posicao'] == "1º"]
     milhares_pos = df_pos1.groupby('Milhar').size().reset_index(name='counts')
     milhares_pos1 = milhares_pos.iloc[265:].head(20).to_dict(orient='records')
@@ -153,12 +154,13 @@ def mostrar():
 
         if dezenas_str is not None:
             dezenas = dezenas_str
+            mostrar = "Dezenas pesquisadas"
         else:
             dezenas = []
       
         return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
                             milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
-                            milhar6=milhar6, nomes_bichos=nomes_bichos, dezenas=dezenas)
+                            milhar6=milhar6, nomes_bichos=nomes_bichos, dezenas=dezenas, mostrar=mostrar, bicho_pesquisado=bicho_pesquisado)
 
     return render_template("pages/apostar/mostrar.html", milhares_pos1=milhares_pos1, milhar_se_saiu=milhar_se_saiu,
                            milhar1=milhar1, milhar2=milhar2, milhar3=milhar3, milhar4=milhar4, milhar5=milhar5,
