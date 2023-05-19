@@ -138,7 +138,7 @@ def mostrar():
 
     df_pos1 = df[df['Posicao'] == "1º"]
     milhares_pos = df_pos1.groupby('Milhar').size().reset_index(name='counts')
-    milhares_pos1 = milhares_pos.iloc[265:].head(20).to_dict(orient='records')
+    milhares_pos1 = milhares_pos.iloc[211:].head(20).to_dict(orient='records')
     top = df.groupby(['Milhar']).size().reset_index(name='counts')
     milhares = top.sort_values(by='counts', ascending=False)
     milhar1 = milhares.iloc[17:].head(16).to_dict(orient='records')
